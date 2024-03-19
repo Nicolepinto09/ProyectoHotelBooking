@@ -38,25 +38,29 @@ public class Busqueda {
         this.salida = salida;
     }
      
-    public void clientes(){
+    public boolean clientes(){
+        boolean verificacion = false;
         if (apellido == lista_apellido && nombre == lista_nombre)  {
             JOptionPane.showMessageDialog(null, "El cliente " + nombre + " " + apellido + " se encuentra alojado en la habitación " + num_hab);
+            verificacion = true;
         }
+        return verificacion;
     }
     
-    public void reservacion() {
-        boolean r = true;
+    public boolean reservacion() {
+        boolean reserva = true;
         for (int i = 1; i < ci.length()+1; i++) {
             if (ci.charAt(ci.length()-i) != lista_ci.charAt(lista_ci.length()-i)) {
-                r = false;
+                reserva = false;
                 break;
             }
         }
-        if (r) {
+        if (reserva) {
             JOptionPane.showMessageDialog(null, "- Cliente: " + lista_nombre + " " + lista_apellido + "\n- C.I. " + lista_ci +
                     "\n- Correo: " + email + "\n- Género: " + genero + "\n- Tipo de habitación: " + tipo_hab + 
                     "\n- Teléfono: " + celular + "\n- Fecha de entrada: " + llegada + "\n- Fecha de salida: " + salida);
         }
+        return reserva;
     }
     
 }
