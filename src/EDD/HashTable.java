@@ -3,84 +3,125 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package EDD;
+import Clases.Cliente;
+import Clases.Estado;
 
 /**
  *
  * @author nicolepinto
  */
 public class HashTable {
-    private ListaSimple[] array;
     private int size;
-    public HashTable(int size){
-        this.size = size;
-        for (int i = 0; i < this.size; i++) {
-            this.array[i] = new ListaSimple();
-            
-        }
+    private Estado[] estado;
+
+    public HashTable() {
+        this.size = 300;
+        this.estado = new Estado[size];
     }
 
-    /**
-     * @return the array
-     */
-    public ListaSimple[] getArray() {
-        return array;
-    }
-
-    /**
-     * @param array the array to set
-     */
-    public void setArray(ListaSimple[] array) {
-        this.array = array;
-    }
-
-    /**
-     * @return the size
-     */
     public int getSize() {
         return size;
     }
 
-    /**
-     * @param size the size to set
-     */
     public void setSize(int size) {
         this.size = size;
     }
-    //a(int)
-    public Integer Key(String firstname, String lastname){
-        Integer a = 0;
-        for (int i = 0; i < firstname.length(); i++) {
-             char b = firstname.charAt(i);
-            a += (int)b;
+
+    public Estado[] getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado[] estado) {
+        this.estado = estado;
+    }
+
+    public void initTable() {
+        setEstado(new Estado[getSize()]);
+        for (int i = 0; i < size; i++) {
+            getEstado()[i] = null;
         }
-        for (int i = 0; i < lastname.length(); i++) {
-             char b = lastname.charAt(i);
-            a += (int)b;
+    }
+
+    public void insertEstado(Estado estado) {
+        if (!estaEnHash(estado)) {
+            int index = estado.getNumeroHabitacion();
+            while (getEstado()[index] != null) {
+                index++;
+            }
+            getEstado()[index] = estado;
+        } 
+    }
+
+    public boolean estaEnHash(Estado est) {
+        boolean aux = false;
+        for (int i = 0; i < this.getEstado().length; i++) {
+            if (getEstado()[i] != null) {
+                if (getEstado()[i].compareEstado(est)) {
+                    aux = true;
+                }
+            }
         }
-        return a % getSize();
+        return aux;
     }
-    
-    public void Insert(String firstname, String lastname, int room){
-        Integer f = Key(firstname, lastname);
-        this.array[f].Insert(firstname, lastname, room);
-    }
-    
-    public void Delete(String firstname, String lastname, int room){
-        Integer f = Key(firstname, lastname);
-        this.array[f].Delete(firstname, lastname, room);
-    }
-    
-    public Nodo Search(String firstname, String lastname){
-        Integer f = Key(firstname, lastname);
-        Nodo p = this.array[f].Search(firstname, lastname);
-        return p;
-    }
-    
-    public String Print(){
-        String a = "";
-        for (int i = 0; i < this.size; i++) {
-           a += this.array[i].Imprimir();
+
+    public int indiceEnHash(Estado est) {
+        for (int i = 0; i < this.getEstado().length; i++) {
+            if (getEstado()[i] != null) {
+                if (getEstado()[i].compareEstado(est)) {
+                    return i;
+                }
+            }
         }
-        return a;
+
+        return -1;
     }
+
+    public int indiceDeClienteEnHash(Cliente cliente) {
+        for (int i = 0; i < this.getEstado().length; i++) {
+            if (getEstado()[i] != null) {
+                if (getEstado()[i].getCliente().getNombre().equalsIgnoreCase(cliente.getNombre()) && getEstado()[i].getCliente().getApellido().equalsIgnoreCase(cliente.getApellido())) {
+                    return i;
+                } else {
+                    for (int j = 0; j < getEstado()[i].getAcompañantes().getSize(); j++) {
+                        Cliente acomp = (Cliente) getEstado()[i].getAcompañantes().getValor(j);
+                        if (acomp.getNombre().equalsIgnoreCase(cliente.getNombre()) && acomp.getApellido().equalsIgnoreCase(cliente.getApellido())) {
+                            return i;
+                        }
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    public Estado indiceDeEstadoEnHash(Cliente cliente) {
+        for (int i = 0; i < this.getEstado().length; i++) {
+            if (getEstado()[i] != null) {
+                if (getEstado()[i].getCliente().getNombre().equalsIgnoreCase(cliente.getNombre()) && getEstado()[i].getCliente().getApellido().equalsIgnoreCase(cliente.getApellido())) {
+                    return getEstado()[i];
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public void AgregarAcompañante(Cliente cliente, Cliente acomp) {
+        for (int i = 0; i < this.getEstado().length; i++) {
+            if (getEstado()[i] != null) {
+                if (getEstado()[i].getCliente().getNombre().equalsIgnoreCase(cliente.getNombre()) && getEstado()[i].getCliente().getApellido().equalsIgnoreCase(cliente.getApellido())) {
+                    getEstado()[i].getAcompañantes().insertarFinal(acomp);
+                }
+            }
+        }
+    }
+
+    public void Disponibles(ListaSimple hab_disp) {
+        for (int i = 1; i < this.getEstado().length; i++) {
+            if (getEstado()[i] == null) {
+                hab_disp.insertarFinal(i);
+            }
+        }
+    }
+
 }
