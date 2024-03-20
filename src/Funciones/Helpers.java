@@ -8,10 +8,15 @@ public class Helpers {
     }
     
     public boolean validacion() {
-        boolean cedula = false;
         String digitos = ci.replace(".", "");
-        System.out.println(digitos);
-        return cedula;
+        try {
+            Integer.parseInt(digitos);
+            System.out.println("BIEN");
+            return true;
+        } catch (Exception e) {
+            System.out.println("MAL");
+            return false;
+        }
     }
-            
+    
 }
