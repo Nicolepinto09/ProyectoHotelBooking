@@ -46,10 +46,8 @@ public class Helpers {
         String digitos = ci.replace(".", "");
         try {
             Integer.parseInt(digitos);
-            System.out.println("BIEN");
             return false;
         } catch (Exception e) {
-            System.out.println("MAL");
             return true;
         }
     }
