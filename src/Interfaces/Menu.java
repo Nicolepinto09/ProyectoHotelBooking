@@ -32,35 +32,50 @@ public class Menu extends javax.swing.JFrame {
         Habitacion = new javax.swing.JButton();
         In = new javax.swing.JButton();
         Out = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Clientes.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Clientes.setText("Búsqueda de Clientes");
         Clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClientesActionPerformed(evt);
             }
         });
-        jPanel1.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 160, -1));
+        jPanel1.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, -1));
 
+        Reservacion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Reservacion.setText("Búsqueda de Reservación");
-        jPanel1.add(Reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+        jPanel1.add(Reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
+        Habitacion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Habitacion.setText("Historial de Habitación");
-        jPanel1.add(Habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 160, -1));
+        jPanel1.add(Habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 200, -1));
 
+        In.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         In.setText("Check-in");
-        jPanel1.add(In, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 160, -1));
+        jPanel1.add(In, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 200, -1));
 
+        Out.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Out.setText("Check-out");
-        jPanel1.add(Out, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 160, -1));
+        jPanel1.add(Out, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 200, -1));
 
-        Salir.setText("X");
-        jPanel1.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("HOTEL BOOKING");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 400, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/HOTEL THE MITSUI KYOTOにチェックイン _ ｈｏｔｅｌｏＧ．.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 490, 300));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -112,7 +127,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton In;
     private javax.swing.JButton Out;
     private javax.swing.JButton Reservacion;
-    private javax.swing.JButton Salir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
