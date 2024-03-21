@@ -9,7 +9,11 @@ package Funciones;
  * @author nicolepinto
  */
 public class Check {
+<<<<<<< HEAD
 //    private TreeRoom habitacion;
 //    private HashTable huespedes;
 //    private BTS reservaciones;
+=======
+    
+>>>>>>> 4344546b4347ad459f6864401702f011eb88c583
 }

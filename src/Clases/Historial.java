@@ -9,6 +9,7 @@ package Clases;
  * @author nicolepinto
  */
 public class Historial {
+<<<<<<< HEAD
     private int numerohabitacion;
     private String tipohabitacion;
     private int piso;
@@ -60,4 +61,7 @@ public class Historial {
     public void setPiso(int piso) {
         this.piso = piso;
     }
+=======
+    
+>>>>>>> 4344546b4347ad459f6864401702f011eb88c583
 }

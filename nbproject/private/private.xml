@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/pedro/OneDrive/Desktop/Proyecto2Pedro/src/EDD/ListaSimple.java</file>
             <file>file:/C:/Users/pedro/OneDrive/Desktop/Proyecto2Pedro/src/EDD/HashTable.java</file>
             <file>file:/C:/Users/pedro/OneDrive/Desktop/Proyecto2Pedro/src/Clases/Estado.java</file>
@@ -18,6 +19,10 @@
             <file>file:/C:/Users/pedro/OneDrive/Desktop/Proyecto2Pedro/src/EDD/BTS.java</file>
             <file>file:/C:/Users/pedro/OneDrive/Desktop/Proyecto2Pedro/src/EDD/Nodo.java</file>
             <file>file:/C:/Users/pedro/OneDrive/Desktop/Proyecto2Pedro/src/Clases/Reservacion.java</file>
+=======
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Main/Main.java</file>
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Funciones/Busqueda.java</file>
+>>>>>>> 4344546b4347ad459f6864401702f011eb88c583
         </group>
     </open-files>
 </project-private>

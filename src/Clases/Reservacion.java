@@ -9,6 +9,7 @@ package Clases;
  * @author nicolepinto
  */
 public class Reservacion {
+<<<<<<< HEAD
     private Cliente cliente;
     private String tipohabitacion;
     private String fechallegada;
@@ -76,5 +77,7 @@ public class Reservacion {
     public void setFechasalida(String fechasalida) {
         this.fechasalida = fechasalida;
     }
+=======
+>>>>>>> 4344546b4347ad459f6864401702f011eb88c583
     
 }
