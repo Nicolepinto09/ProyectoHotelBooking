@@ -1,0 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Funciones;
+
+/**
+ *
+ * @author nicolepinto
+ */
+public class Check {
+//    private TreeRoom habitacion;
+//    private HashTable huespedes;
+//    private BTS reservaciones;
+}
