@@ -9,42 +9,42 @@ package Clases;
  * @author nicolepinto
  */
 public class Historial {
-    private int numeroHabitacion;
-    private String tipoHabitacion;
+    private int num_hab;
+    private String tipo_hab;
     private int piso;
 
-    public Historial(int numeroHabitacion, String tipoHabitacion, int piso) {
-        this.numeroHabitacion = numeroHabitacion;
-        this.tipoHabitacion = tipoHabitacion;
+    public Historial(int num_hab, String tipo_hab, int piso) {
+        this.num_hab = num_hab;
+        this.tipo_hab = tipo_hab;
         this.piso = piso;
     }
 
     /**
      * @return the numeroHabitacion
      */
-    public int getNumeroHabitacion() {
-        return numeroHabitacion;
+    public int getNum_hab() {
+        return num_hab;
     }
 
     /**
-     * @param numeroHabitacion the numeroHabitacion to set
+     * @param num_hab the numeroHabitacion to set
      */
-    public void setNumeroHabitacion(int numeroHabitacion) {
-        this.numeroHabitacion = numeroHabitacion;
+    public void setNum_hab(int num_hab) {
+        this.num_hab = num_hab;
     }
 
     /**
      * @return the tipoHabitacion
      */
-    public String getTipoHabitacion() {
-        return tipoHabitacion;
+    public String getTipo_hab() {
+        return tipo_hab;
     }
 
     /**
-     * @param tipoHabitacion the tipoHabitacion to set
+     * @param tipo_hab the tipoHabitacion to set
      */
-    public void setTipoHabitacion(String tipoHabitacion) {
-        this.tipoHabitacion = tipoHabitacion;
+    public void setTipo_hab(String tipo_hab) {
+        this.tipo_hab = tipo_hab;
     }
 
     /**

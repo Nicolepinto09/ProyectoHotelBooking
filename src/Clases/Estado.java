@@ -9,12 +9,12 @@ package Clases;
  * @author nicolepinto
  */
 public class Estado {
-    private int numerohabitacion;
+    private int num_hab;
     private Cliente cliente;
     private String llegada;
 
-    public Estado(int numerohabitacion, Cliente cliente, String llegada) {
-        this.numerohabitacion = numerohabitacion;
+    public Estado(int num_hab, Cliente cliente, String llegada) {
+        this.num_hab = num_hab;
         this.cliente = cliente;
         this.llegada = llegada;
     }
@@ -22,15 +22,15 @@ public class Estado {
     /**
      * @return the numerohabitacion
      */
-    public int getNumerohabitacion() {
-        return numerohabitacion;
+    public int getNum_hab() {
+        return num_hab;
     }
 
     /**
-     * @param numerohabitacion the numerohabitacion to set
+     * @param num_hab the numerohabitacion to set
      */
-    public void setNumerohabitacion(int numerohabitacion) {
-        this.numerohabitacion = numerohabitacion;
+    public void setNum_hab(int num_hab) {
+        this.num_hab = num_hab;
     }
 
     /**

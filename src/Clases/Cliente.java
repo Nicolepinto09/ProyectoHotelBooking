@@ -11,15 +11,15 @@ package Clases;
 public class Cliente {
     private String nombre;
     private String apellido; 
-    private String Correo;
+    private String correo;
     private String genero;
     private int cedula;
     private String celular;
 
-    public Cliente(String nombre, String apellido, String Correo, String genero, int cedula, String celular) {
+    public Cliente(String nombre, String apellido, String correo, String genero, int cedula, String celular) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.Correo = Correo;
+        this.correo = correo;
         this.genero = genero;
         this.cedula = cedula;
         this.celular = celular;
@@ -57,14 +57,14 @@ public class Cliente {
      * @return the Correo
      */
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
     /**
-     * @param Correo the Correo to set
+     * @param correo the Correo to set
      */
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     /**

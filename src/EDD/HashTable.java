@@ -44,12 +44,15 @@ public class HashTable {
 
     public void insertEstado(Estado estado) {
         if (!estaEnHash(estado)) {
-            int index = estado.getNumeroHabitacion();
+            int index = estado.getNum_hab();
             while (getEstado()[index] != null) {
                 index++;
             }
+//            JOptionPane.showMessageDialog(null, "La clave del Cliente " + estado.getCliente().getNombre()+ " es: " + index);
             getEstado()[index] = estado;
-        } 
+        } else {
+//            JOptionPane.showMessageDialog(null, "¡ERROR!\nEl estado ya está registrado");
+        }
     }
 
     public boolean estaEnHash(Estado est) {
@@ -99,6 +102,14 @@ public class HashTable {
             if (getEstado()[i] != null) {
                 if (getEstado()[i].getCliente().getNombre().equalsIgnoreCase(cliente.getNombre()) && getEstado()[i].getCliente().getApellido().equalsIgnoreCase(cliente.getApellido())) {
                     return getEstado()[i];
+                } else {
+
+                    for (int j = 0; j < getEstado()[i].getAcompañantes().getSize(); j++) {
+                        Cliente acomp = (Cliente) getEstado()[i].getAcompañantes().getValor(j);
+                        if (acomp.getNombre().equalsIgnoreCase(cliente.getNombre()) && acomp.getApellido().equalsIgnoreCase(cliente.getApellido())) {
+                            return getEstado()[i];
+                        }
+                    }
                 }
             }
         }
@@ -122,6 +133,15 @@ public class HashTable {
                 hab_disp.insertarFinal(i);
             }
         }
+    }
+
+    public boolean eliminarEstado(Estado estadoAEliminar) {
+        int indice = indiceEnHash(estadoAEliminar);
+        if (indice != -1) {
+            estado[indice] = null;
+            return true;
+        }
+        return false;
     }
 
 }

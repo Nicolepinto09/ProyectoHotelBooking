@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package EDD;
+import Clases.Reservacion;
 
 /**
  *
@@ -112,44 +113,44 @@ public class ABB {
         }
     }
     
-public boolean eliminar(int cedula) {
-    NodoABB nodoAEliminar = buscarNodo(this.nodoRaiz, cedula);
-    if (nodoAEliminar == null) {
-        return false; // El nodo con la cédula especificada no existe.
-    }
-
-    // Caso 1 y 2: Nodo sin hijos o con un solo hijo.
-    if (nodoAEliminar.getHijoIzquierdo() == null || nodoAEliminar.getHijoDerecho() == null) {
-        NodoABB nuevoNodo;
-        if (nodoAEliminar.getHijoIzquierdo() == null) {
-            nuevoNodo = nodoAEliminar.getHijoDerecho();
-        } else {
-            nuevoNodo = nodoAEliminar.getHijoIzquierdo();
+    public boolean eliminar(int cedula) {
+        NodoABB nodoAEliminar = buscarNodo(this.nodoRaiz, cedula);
+        if (nodoAEliminar == null) {
+            return false; // El nodo con la cédula especificada no existe.
         }
 
-        if (nodoAEliminar.getPadre() == null) { // Si es la raíz
-            this.nodoRaiz = nuevoNodo;
-        } else if (nodoAEliminar == nodoAEliminar.getPadre().getHijoIzquierdo()) {
-            nodoAEliminar.getPadre().setHijoIzquierdo(nuevoNodo);
-        } else {
-            nodoAEliminar.getPadre().setHijoDerecho(nuevoNodo);
-        }
+        // Caso 1 y 2: Nodo sin hijos o con un solo hijo.
+        if (nodoAEliminar.getHijoIzquierdo() == null || nodoAEliminar.getHijoDerecho() == null) {
+            NodoABB nuevoNodo;
+            if (nodoAEliminar.getHijoIzquierdo() == null) {
+                nuevoNodo = nodoAEliminar.getHijoDerecho();
+            } else {
+                nuevoNodo = nodoAEliminar.getHijoIzquierdo();
+            }
 
-        if (nuevoNodo != null) {
-            nuevoNodo.setPadre(nodoAEliminar.getPadre());
-        }
-    } else { // Caso 3: Nodo con dos hijos.
-        NodoABB sucesor = encontrarSucesor(nodoAEliminar.getHijoDerecho());
-        eliminar(sucesor.getReservacion().getCliente().getCedula()); // Elimina el nodo sucesor (que no tendrá dos hijos).
-        nodoAEliminar.setReservacion(sucesor.getReservacion());
-    }
-    return true;
-}
+            if (nodoAEliminar.getPadre() == null) { // Si es la raíz
+                this.nodoRaiz = nuevoNodo;
+            } else if (nodoAEliminar == nodoAEliminar.getPadre().getHijoIzquierdo()) {
+                nodoAEliminar.getPadre().setHijoIzquierdo(nuevoNodo);
+            } else {
+                nodoAEliminar.getPadre().setHijoDerecho(nuevoNodo);
+            }
 
-private NodoABB encontrarSucesor(NodoABB nodo) {
-    while (nodo.getHijoIzquierdo() != null) {
-        nodo = nodo.getHijoIzquierdo();
+            if (nuevoNodo != null) {
+                nuevoNodo.setPadre(nodoAEliminar.getPadre());
+            }
+        } else { // Caso 3: Nodo con dos hijos.
+            NodoABB sucesor = encontrarSucesor(nodoAEliminar.getHijoDerecho());
+            eliminar(sucesor.getReservacion().getCliente().getCedula()); // Elimina el nodo sucesor (que no tendrá dos hijos).
+            nodoAEliminar.setReservacion(sucesor.getReservacion());
+        }
+        return true;
     }
-    return nodo;
-}
+
+    private NodoABB encontrarSucesor(NodoABB nodo) {
+        while (nodo.getHijoIzquierdo() != null) {
+            nodo = nodo.getHijoIzquierdo();
+        }
+        return nodo;
+    }
 }

@@ -9,42 +9,42 @@ package Clases;
  * @author nicolepinto
  */
 public class Habitacion {
-    private int numerohabitacion;
-    private String tipohabitacion;
+    private int num_hab;
+    private String tipo_hab;
     private int piso;
 
-    public Habitacion(int numerohabitacion, String tipohabitacion, int piso) {
-        this.numerohabitacion = numerohabitacion;
-        this.tipohabitacion = tipohabitacion;
+    public Habitacion(int num_hab, String tipo_hab, int piso) {
+        this.num_hab = num_hab;
+        this.tipo_hab = tipo_hab;
         this.piso = piso;
     }
 
     /**
      * @return the numerohabitacion
      */
-    public int getNumerohabitacion() {
-        return numerohabitacion;
+    public int getNum_hab() {
+        return num_hab;
     }
 
     /**
-     * @param numerohabitacion the numerohabitacion to set
+     * @param num_hab the numerohabitacion to set
      */
-    public void setNumerohabitacion(int numerohabitacion) {
-        this.numerohabitacion = numerohabitacion;
+    public void setNum_hab(int num_hab) {
+        this.num_hab = num_hab;
     }
 
     /**
      * @return the tipohabitacion
      */
-    public String getTipohabitacion() {
-        return tipohabitacion;
+    public String getTipo_hab() {
+        return tipo_hab;
     }
 
     /**
-     * @param tipohabitacion the tipohabitacion to set
+     * @param tipo_hab the tipohabitacion to set
      */
-    public void setTipohabitacion(String tipohabitacion) {
-        this.tipohabitacion = tipohabitacion;
+    public void setTipo_hab(String tipo_hab) {
+        this.tipo_hab = tipo_hab;
     }
 
     /**

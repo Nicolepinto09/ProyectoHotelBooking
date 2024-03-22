@@ -10,13 +10,13 @@ package Clases;
  */
 public class Reservacion {
     private Cliente cliente;
-    private String tipohabitacion;
+    private String tipo_hab;
     private String fechaLlegada;
     private String fechaSalida;
 
-    public Reservacion(Cliente cliente, String tipohabitacion, String fechaLlegada, String fechaSalida) {
+    public Reservacion(Cliente cliente, String tipo_hab, String fechaLlegada, String fechaSalida) {
         this.cliente = cliente;
-        this.tipohabitacion = tipohabitacion;
+        this.tipo_hab = tipo_hab;
         this.fechaLlegada = fechaLlegada;
         this.fechaSalida = fechaSalida;
     }
@@ -38,15 +38,15 @@ public class Reservacion {
     /**
      * @return the tipohabitacion
      */
-    public String getTipohabitacion() {
-        return tipohabitacion;
+    public String getTipo_hab() {
+        return tipo_hab;
     }
 
     /**
-     * @param tipohabitacion the tipohabitacion to set
+     * @param tipo_hab the tipohabitacion to set
      */
-    public void setTipohabitacion(String tipohabitacion) {
-        this.tipohabitacion = tipohabitacion;
+    public void setTipo_hab(String tipo_hab) {
+        this.tipo_hab = tipo_hab;
     }
 
     /**
