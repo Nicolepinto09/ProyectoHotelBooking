@@ -74,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel2.setText("HOTEL BOOKING");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 400, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/HOTEL THE MITSUI KYOTOにチェックイン _ ｈｏｔｅｌｏＧ．.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FMenu.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(300, 300));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 490, 300));
