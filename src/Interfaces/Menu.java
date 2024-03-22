@@ -6,7 +6,7 @@ package Interfaces;
 
 /**
  *
- * @author Isabel
+ * @author MigueMonti
  */
 public class Menu extends javax.swing.JFrame {
 
