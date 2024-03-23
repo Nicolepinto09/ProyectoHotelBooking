@@ -26,7 +26,7 @@ public class Check {
     }
     
     public void ChekIn(int cedula){
-        ABB found = this.reservaciones.buscarNodo(reservaciones.getNodoRaiz(), cedula);
+        NodoABB found = this.reservaciones.buscarNodo(reservaciones.getNodoRaiz(), cedula);
         System.out.println("asdsdweqw");
         if(found != null){
             Habitacion f = this.habitacion.SearchEmpty(found.getHabitacion(), habitacion.getRaiz());
@@ -47,7 +47,7 @@ public class Check {
     }
     
     public void Checkout(int cedula){
-        ABB found = this.reservaciones.buscarNodo(reservaciones.getNodoRaiz(), cedula);
+        NodoABB found = this.reservaciones.buscarNodo(reservaciones.getNodoRaiz(), cedula);
         if(found != null){
             Nodo f = this.huespedes.Search(found.getFirstname(), found.getLastname());
             if(f != null){

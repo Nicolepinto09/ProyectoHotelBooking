@@ -5,8 +5,10 @@
 package Funciones;
 
 import Clases.Cliente;
+import Clases.Habitacion;
 import Clases.Reservacion;
 import EDD.ABB;
+import EDD.AVL;
 import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.File;
@@ -74,7 +76,47 @@ public class ArchivoCSV {
         }
 
     }
-    
+        public void Leer_habitaciones(AVL habitaciones) {
+        String line;
+        String expresion_txt = "";
+        String path = "test//Habitaciones.csv";
+        File file = new File(path);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            } else {
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                while ((line = br.readLine()) != null) {
+                    if (!line.isEmpty()) {
+                        expresion_txt += line + "\n";
+                    }
+                }
+                if (!"".equals(expresion_txt)) {
+                    String[] expresion_split = expresion_txt.split("\n");
+                    for (int i = 0; i < expresion_split.length; i++) {
+                        String[] info = expresion_split[i].split(",");
+                        if (help.ValidarNumeros(info[0]) != -1 && help.ValidarNumeros(info[2]) != -1 && help.Validar_TipoHab(info[1]) != null) {
+                            int num_hab = help.ValidarNumeros(info[0]);
+                            String tipo_hab = help.Validar_TipoHab(info[1]);
+                            int piso = help.ValidarNumeros(info[2]);
+
+                            Habitacion hab = new Habitacion(num_hab, tipo_hab, piso);
+
+                           habitaciones.insertar(num_hab, hab);
+                            
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
+                            break;
+                        }
+                    }
+                }
+                br.close();
+            }
+        } catch (HeadlessException | IOException ex) {
+            JOptionPane.showMessageDialog(null, "Error al leer la expresion");
+        }
+    }
     
     
     
