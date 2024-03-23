@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import EDD.ListaSimple;
+
 /**
  *
  * @author nicolepinto
@@ -11,54 +13,60 @@ package Clases;
 public class Estado {
     private int num_hab;
     private Cliente cliente;
-    private String llegada;
+    private String fechaLlegada;
+    private ListaSimple acompañantes;
 
-    public Estado(int num_hab, Cliente cliente, String llegada) {
+
+    public Estado(int num_hab, Cliente cliente, String fechaLlegada) {
         this.num_hab = num_hab;
         this.cliente = cliente;
-        this.llegada = llegada;
+        this.fechaLlegada = fechaLlegada;
+        this.acompañantes = new ListaSimple();
     }
 
-    /**
-     * @return the numerohabitacion
-     */
     public int getNum_hab() {
         return num_hab;
     }
 
-    /**
-     * @param num_hab the numerohabitacion to set
-     */
     public void setNum_hab(int num_hab) {
         this.num_hab = num_hab;
     }
 
-    /**
-     * @return the cliente
-     */
     public Cliente getCliente() {
         return cliente;
     }
 
-    /**
-     * @param cliente the cliente to set
-     */
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    /**
-     * @return the llegada
-     */
-    public String getLlegada() {
-        return llegada;
+    public String getFechaLlegada() {
+        return fechaLlegada;
     }
 
-    /**
-     * @param llegada the llegada to set
-     */
-    public void setLlegada(String llegada) {
-        this.llegada = llegada;
+    public void setFechaLlegada(String fechaLlegada) {
+        this.fechaLlegada = fechaLlegada;
+    }
+
+    public ListaSimple getAcompañantes() {
+        return acompañantes;
+    }
+
+    public void setAcompañantes(ListaSimple acompañantes) {
+        this.acompañantes = acompañantes;
+    }
+    
+    
+
+    // Arregla el to String para que imprima bonito
+    @Override
+    public String toString() {
+        return "num_hab=" + num_hab + ", cliente=" + cliente.getCedula() + ", llegada=" + fechaLlegada + '\n';
+    }
+
+    /*Compara si dos documentos son iguales*/
+    public boolean compareEstado(Estado estado) {
+        return (estado.getCliente().getTelefono() == null ? this.cliente.getTelefono() == null : estado.getCliente().getTelefono().equals(this.cliente.getTelefono())) && estado.getCliente().getNombre().equalsIgnoreCase(this.cliente.getNombre());
     }
     
 }

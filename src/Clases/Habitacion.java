@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import EDD.ListaSimple;
+
 /**
  *
  * @author nicolepinto
@@ -12,53 +14,70 @@ public class Habitacion {
     private int num_hab;
     private String tipo_hab;
     private int piso;
-
+    private boolean dispo;
+    private ListaSimple historial_hab;
+    
     public Habitacion(int num_hab, String tipo_hab, int piso) {
         this.num_hab = num_hab;
         this.tipo_hab = tipo_hab;
         this.piso = piso;
+        this.dispo = false;
+        this.historial_hab = new ListaSimple();
     }
 
-    /**
-     * @return the numerohabitacion
-     */
     public int getNum_hab() {
         return num_hab;
     }
 
-    /**
-     * @param num_hab the numerohabitacion to set
-     */
     public void setNum_hab(int num_hab) {
         this.num_hab = num_hab;
     }
 
-    /**
-     * @return the tipohabitacion
-     */
     public String getTipo_hab() {
         return tipo_hab;
     }
 
-    /**
-     * @param tipo_hab the tipohabitacion to set
-     */
     public void setTipo_hab(String tipo_hab) {
         this.tipo_hab = tipo_hab;
     }
 
-    /**
-     * @return the piso
-     */
     public int getPiso() {
         return piso;
     }
 
-    /**
-     * @param piso the piso to set
-     */
     public void setPiso(int piso) {
         this.piso = piso;
     }
+
+    public boolean isDispo() {
+        return dispo;
+    }
+
+    public void setDispo(boolean dispo) {
+        this.dispo = dispo;
+    }
+
+    public ListaSimple getHistorial_hab() {
+        return historial_hab;
+    }
+
+    public void setHistorial_hab(ListaSimple historial_lab) {
+        this.historial_hab = historial_lab;
+    }
+
+        public String mostrar_historial(){
+        if(!historial_hab.isEmpty()){
+            return historial_hab.Transformar();
+        }
+        
+        return "No hay historial en esta habitacion";
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Habitacion{" + "num_hab=" + num_hab + ", tipo_hab=" + tipo_hab + ", piso=" + piso + ", dispo=" + dispo + ", historial_lab=" + historial_hab + '}';
+    }
+
     
 }
