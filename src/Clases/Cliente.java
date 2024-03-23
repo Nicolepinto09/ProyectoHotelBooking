@@ -95,7 +95,6 @@ public class Cliente {
         this.cedula = cedula;
     }
 
- 
     public String getTelefono() {
         return telefono;
     }
@@ -108,6 +107,5 @@ public class Cliente {
     public String toString() {
         return "Cliente{" + "nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", genero=" + genero + ", cedula=" + cedula + ", telefono=" + telefono + '}';
     }
-    
     
 }
