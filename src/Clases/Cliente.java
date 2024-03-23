@@ -24,6 +24,40 @@ public class Cliente {
         this.cedula = cedula;
         this.telefono = telefono;
     }
+    public Cliente(String nombre, String apellido, String correo, String genero, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.genero = genero;
+        this.cedula = 0;
+        this.telefono = telefono;
+    }
+    
+    public Cliente(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = null;
+        this.genero = null;
+        this.cedula = 0;
+        this.telefono = null;
+    }
+    
+    public Cliente(String nombre, String apellido, String correo, String genero, int cedula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.genero = genero;
+        this.cedula = cedula;
+        this.telefono = null;
+    }
+    
+    public Cliente() {
+        this.apellido = this.nombre = null;
+        this.correo = null;
+        this.genero = null;
+        this.cedula = 0;
+        this.telefono = null;
+    }
 
     /**
      * @return the nombre
