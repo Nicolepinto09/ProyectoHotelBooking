@@ -96,7 +96,7 @@ public class Cliente {
     }
 
  
-    public String geTtelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
