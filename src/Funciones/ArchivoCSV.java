@@ -189,5 +189,60 @@ public class ArchivoCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
     }
-    
+   
+            //funcion para leer archivo TXT
+    public void Leer_historial(AVL habitaciones) {
+        String line;
+        String expresion_txt = "";
+        String path = "test//Historico.csv";
+        File file = new File(path);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            } else {
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                while ((line = br.readLine()) != null) {
+                    if (!line.isEmpty()) {
+                        expresion_txt += line + "\n";
+                    }
+                }
+                if (!"".equals(expresion_txt)) {
+                    String[] expresion_split = expresion_txt.split("\n");
+                    for (int i = 0; i < expresion_split.length; i++) {
+                        String[] info = expresion_split[i].split(",");
+                        if (help.ValidarCedula(info[0]) != -1 && help.ValidarCorreo(info[3]) != null) {
+                            int cedula = help.ValidarCedula(info[0]);
+                            String nombre = info[1];
+                            String apellido = info[2];
+                            String correo = help.ValidarCorreo(info[3]);
+                            String genero = info[4];
+                            String date = info[5];
+                            
+                            int num_hab = help.ValidarNumeros(info[6]);
+
+                            Cliente cliente = new Cliente(nombre, apellido, correo, genero, cedula);
+                            
+                            Estado estado = new Estado(num_hab, cliente, date);
+                            
+                            
+                            habitaciones.buscarPorClave(num_hab).getHistorial_hab().insertarFinal(estado);
+
+                            
+
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
+                            break;
+                        }
+                    }
+                }
+                br.close();
+            }
+        } catch (HeadlessException | IOException ex) {
+            JOptionPane.showMessageDialog(null, "Error al leer la expresion");
+        }
+
+    }    
+        
+        
 }
