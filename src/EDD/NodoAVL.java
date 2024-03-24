@@ -80,6 +80,13 @@ public class NodoAVL {
     public void setHabitacion(Habitacion habitacion) {
         this.habitacion = habitacion;
     }
+
+    /**
+     * @return the altura
+     */
+    public int getAltura() {
+        return altura;
+    }
     
     
     
