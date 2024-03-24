@@ -9,59 +9,105 @@ package Clases;
  * @author nicolepinto
  */
 public class Historial {
-<<<<<<< HEAD
-    private int numerohabitacion;
-    private String tipohabitacion;
-    private int piso;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String genero;
+    private String entrada;
+    private String salida;
 
-    public Historial(int numerohabitacion, String tipohabitacion, int piso) {
-        this.numerohabitacion = numerohabitacion;
-        this.tipohabitacion = tipohabitacion;
-        this.piso = piso;
+    public Historial(String nombre, String apellido, String email, String genero, String entrada, String salida) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.genero = genero;
+        this.entrada = entrada;
+        this.salida = salida;
     }
 
     /**
-     * @return the numerohabitacion
+     * @return the nombre
      */
-    public int getNumerohabitacion() {
-        return numerohabitacion;
+    public String getNombre() {
+        return nombre;
     }
 
     /**
-     * @param numerohabitacion the numerohabitacion to set
+     * @param nombre the nombre to set
      */
-    public void setNumerohabitacion(int numerohabitacion) {
-        this.numerohabitacion = numerohabitacion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     /**
-     * @return the tipohabitacion
+     * @return the apellido
      */
-    public String getTipohabitacion() {
-        return tipohabitacion;
+    public String getApellido() {
+        return apellido;
     }
 
     /**
-     * @param tipohabitacion the tipohabitacion to set
+     * @param apellido the apellido to set
      */
-    public void setTipohabitacion(String tipohabitacion) {
-        this.tipohabitacion = tipohabitacion;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     /**
-     * @return the piso
+     * @return the email
      */
-    public int getPiso() {
-        return piso;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * @param piso the piso to set
+     * @param email the email to set
      */
-    public void setPiso(int piso) {
-        this.piso = piso;
+    public void setEmail(String email) {
+        this.email = email;
     }
-=======
+
+    /**
+     * @return the genero
+     */
+    public String getGenero() {
+        return genero;
+    }
+
+    /**
+     * @param genero the genero to set
+     */
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    /**
+     * @return the entrada
+     */
+    public String getEntrada() {
+        return entrada;
+    }
+
+    /**
+     * @param entrada the entrada to set
+     */
+    public void setEntrada(String entrada) {
+        this.entrada = entrada;
+    }
+
+    /**
+     * @return the salida
+     */
+    public String getSalida() {
+        return salida;
+    }
+
+    /**
+     * @param salida the salida to set
+     */
+    public void setSalida(String salida) {
+        this.salida = salida;
+    }
     
->>>>>>> 4344546b4347ad459f6864401702f011eb88c583
+    
 }
