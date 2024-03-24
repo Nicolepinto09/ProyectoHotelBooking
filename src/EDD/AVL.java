@@ -66,4 +66,21 @@ public class AVL {
         }
         return null;
     }
+    
+    public NodoAVL BuscarVacio(String t, NodoAVL aux){
+        if(aux != null){
+            if(aux.getT().equals(t) && aux.isS() == false){
+                return aux;
+            }else{
+                NodoAVL a = BuscarVacio(t, aux.getI());
+                if(a == null){
+                    NodoAVL b = BuscarVacio(t, aux.getD());
+                    return b;
+                }else{
+                    return a;
+                }
+            }
+        }
+        return null;
+    }
 }
