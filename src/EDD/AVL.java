@@ -28,5 +28,26 @@ public class AVL {
         this.raiz = raiz;
     }
     
-    
+    public void InsertarCuarto(int h, String t, String f, NodoAVL aux){
+        NodoAVL newh = new NodoAVL(h,t,f);
+        if(this.getRaiz() == null){
+            this.setRaiz(newh);
+        }else{
+            if(aux != null){
+            if (aux.getH() > h){
+                if(aux.getI() == null){
+                    aux.setI(newh);
+                }else{
+                    InsertarCuarto(h,t,f,aux.getI());
+                }
+            }else{
+                if(aux.getD() == null){
+                    aux.setD(newh);
+                }else{
+                    InsertarCuarto(h,t,f,aux.getD());
+                }
+            }
+        }
+      }
+    }
 }
