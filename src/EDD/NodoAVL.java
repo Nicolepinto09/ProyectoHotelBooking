@@ -87,6 +87,13 @@ public class NodoAVL {
     public int getAltura() {
         return altura;
     }
+
+    /**
+     * @param altura the altura to set
+     */
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
     
     
     
