@@ -20,5 +20,13 @@ public class AVL {
     public NodoAVL getRaiz() {
         return raiz;
     }
+
+    /**
+     * @param raiz the raiz to set
+     */
+    public void setRaiz(NodoAVL raiz) {
+        this.raiz = raiz;
+    }
+    
     
 }
