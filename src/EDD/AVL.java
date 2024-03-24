@@ -50,4 +50,20 @@ public class AVL {
         }
       }
     }
+    public NodoAVL BuscarCuarto(int h, NodoAVL aux){
+        if(aux!= null){
+            if(aux.getH() != h){
+                if(aux.getH() < h){
+                    NodoAVL b = BuscarCuarto(h,aux.getI());
+                    return b;
+                }else{
+                    NodoAVL a = BuscarCuarto(h,aux.getD());
+                    return a;
+                }
+            }else{
+                return aux;
+            }
+        }
+        return null;
+    }
 }
