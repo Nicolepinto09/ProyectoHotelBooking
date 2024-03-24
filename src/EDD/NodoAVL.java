@@ -52,6 +52,13 @@ public class NodoAVL {
     public void setHijoizquierdo(NodoAVL hijoizquierdo) {
         this.hijoizquierdo = hijoizquierdo;
     }
+
+    /**
+     * @return the hijoderecho
+     */
+    public NodoAVL getHijoderecho() {
+        return hijoderecho;
+    }
     
     
     
