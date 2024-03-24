@@ -45,6 +45,13 @@ public class NodoAVL {
     public NodoAVL getHijoizquierdo() {
         return hijoizquierdo;
     }
+
+    /**
+     * @param hijoizquierdo the hijoizquierdo to set
+     */
+    public void setHijoizquierdo(NodoAVL hijoizquierdo) {
+        this.hijoizquierdo = hijoizquierdo;
+    }
     
     
     
