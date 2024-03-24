@@ -38,6 +38,13 @@ public class NodoAVL {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    /**
+     * @return the hijoizquierdo
+     */
+    public NodoAVL getHijoizquierdo() {
+        return hijoizquierdo;
+    }
     
     
     
