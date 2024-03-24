@@ -24,6 +24,13 @@ public class NodoAVL {
         this.hijoderecho = null;
         this.hijoizquierdo = null;
     }
+
+    /**
+     * @return the numero
+     */
+    public int getNumero() {
+        return numero;
+    }
     
     
     
