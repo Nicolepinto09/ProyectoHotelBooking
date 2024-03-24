@@ -73,6 +73,13 @@ public class NodoAVL {
     public Habitacion getHabitacion() {
         return habitacion;
     }
+
+    /**
+     * @param habitacion the habitacion to set
+     */
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
+    }
     
     
     
