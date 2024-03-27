@@ -76,5 +76,10 @@ public class Reservacion {
     public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
+
+    @Override
+    public String toString() {
+        return "Reservacion{" + "cliente=" + cliente + ", tipo_hab=" + tipo_hab + ", fechaLlegada=" + fechaLlegada + ", fechaSalida=" + fechaSalida + '}';
+    }
     
 }

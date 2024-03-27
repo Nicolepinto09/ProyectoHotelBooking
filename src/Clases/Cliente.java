@@ -14,15 +14,49 @@ public class Cliente {
     private String correo;
     private String genero;
     private int cedula;
-    private String celular;
+    private String telefono;
 
-    public Cliente(String nombre, String apellido, String correo, String genero, int cedula, String celular) {
+    public Cliente(String nombre, String apellido, String correo, String genero, int cedula, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.genero = genero;
         this.cedula = cedula;
-        this.celular = celular;
+        this.telefono = telefono;
+    }
+    public Cliente(String nombre, String apellido, String correo, String genero, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.genero = genero;
+        this.cedula = 0;
+        this.telefono = telefono;
+    }
+    
+    public Cliente(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = null;
+        this.genero = null;
+        this.cedula = 0;
+        this.telefono = null;
+    }
+    
+    public Cliente(String nombre, String apellido, String correo, String genero, int cedula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.genero = genero;
+        this.cedula = cedula;
+        this.telefono = null;
+    }
+    
+    public Cliente() {
+        this.apellido = this.nombre = null;
+        this.correo = null;
+        this.genero = null;
+        this.cedula = 0;
+        this.telefono = null;
     }
 
     /**
@@ -95,18 +129,17 @@ public class Cliente {
         this.cedula = cedula;
     }
 
-    /**
-     * @return the celular
-     */
-    public String getCelular() {
-        return celular;
+    public String getTelefono() {
+        return telefono;
     }
 
-    /**
-     * @param celular the celular to set
-     */
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", genero=" + genero + ", cedula=" + cedula + ", telefono=" + telefono + '}';
     }
     
 }
