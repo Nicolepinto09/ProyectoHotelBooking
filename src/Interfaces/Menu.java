@@ -53,18 +53,38 @@ public class Menu extends javax.swing.JFrame {
 
         Reservacion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Reservacion.setText("Búsqueda de Reservación");
+        Reservacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReservacionActionPerformed(evt);
+            }
+        });
         jPanel1.add(Reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
         Habitacion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Habitacion.setText("Historial de Habitación");
+        Habitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HabitacionActionPerformed(evt);
+            }
+        });
         jPanel1.add(Habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 200, -1));
 
         In.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         In.setText("Check-in");
+        In.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InActionPerformed(evt);
+            }
+        });
         jPanel1.add(In, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 200, -1));
 
         Out.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Out.setText("Check-out");
+        Out.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OutActionPerformed(evt);
+            }
+        });
         jPanel1.add(Out, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 200, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -86,7 +106,33 @@ public class Menu extends javax.swing.JFrame {
 
     private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
         // TODO add your handling code here:
+        BClientes i = new BClientes();
+        this.dispose();
     }//GEN-LAST:event_ClientesActionPerformed
+
+    private void ReservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservacionActionPerformed
+        // TODO add your handling code here:
+        BReservacion i = new BReservacion();
+        this.dispose();
+    }//GEN-LAST:event_ReservacionActionPerformed
+
+    private void HabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HabitacionActionPerformed
+        // TODO add your handling code here:
+        HHabitacion i = new HHabitacion();
+        this.dispose();
+    }//GEN-LAST:event_HabitacionActionPerformed
+
+    private void InActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InActionPerformed
+        // TODO add your handling code here:
+        CheckIn i = new CheckIn();
+        this.dispose();
+    }//GEN-LAST:event_InActionPerformed
+
+    private void OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutActionPerformed
+        // TODO add your handling code here:
+        CheckOut i = new CheckOut();
+        this.dispose();
+    }//GEN-LAST:event_OutActionPerformed
 
     /**
      * @param args the command line arguments
