@@ -4,15 +4,23 @@
  */
 package Interfaces;
 
+import EDD.ABB;
+import EDD.AVL;
+import EDD.HashTable;
+import EDD.ListaSimple;
+
 /**
  *
  * @author MigueMonti
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
+    
+    public static HashTable estados = new HashTable();
+    public static ABB reservaciones = new ABB();
+    public static AVL habitaciones = new AVL();
+    public static ListaSimple habitaciones_disponibles = new ListaSimple();
+    
     public Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
