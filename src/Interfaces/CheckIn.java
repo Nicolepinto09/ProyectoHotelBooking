@@ -7,6 +7,8 @@ package Interfaces;
 import Clases.Estado;
 import Clases.Reservacion;
 import Funciones.Helpers;
+import static Interfaces.Menu.estados;
+import static Interfaces.Menu.reservaciones;
 
 /**
  *
@@ -89,13 +91,13 @@ public class CheckIn extends javax.swing.JFrame {
         int count = 0;
         int num_hosp = 0;
         if (ci != -1){
-            Reservacion c = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), c.getReservacion());
+            Reservacion c = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion();
             if (count == 0){
                 this.Resultado.setText("No hay la habitacion del tipo deseada");
             }else{
                 reservaciones.eliminar(ci);
                 Estado estado = new Estado(num_hosp, c.getCliente(), c.getFechaLlegada());
-                huespedes.insertEstado(estado);
+                estados.insertEstado(estado);
                 this.Resultado.setText("Se le ha asignado la habitacion: " + num_hosp);
             }
         }else{

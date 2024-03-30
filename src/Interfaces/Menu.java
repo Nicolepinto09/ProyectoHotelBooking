@@ -138,7 +138,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutActionPerformed
         // TODO add your handling code here:
-        CheckOut i = new CheckOut();
+        Checkout i = new Checkout();
         this.dispose();
     }//GEN-LAST:event_OutActionPerformed
 

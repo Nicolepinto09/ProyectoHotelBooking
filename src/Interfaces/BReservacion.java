@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Clases.Reservacion;
+import static Interfaces.Menu.reservaciones;
 
 /**
  *
@@ -82,7 +83,7 @@ public class BReservacion extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try{
-           Reservacion r = reservas.buscarNodo(reservas.getNodoRaiz(),Integer.parseInt(this.IngresarC.getText()));
+           Reservacion r = reservaciones.buscarNodo(reservaciones.getNodoRaiz(),Integer.parseInt(this.IngresarC.getText()));
             this.Resultado.setText("Nombre: "+ r.getCliente().getNombre() +" "+ r.getCliente().getApellido() +"\nCelular: "+ r.getCliente().getTelefono() + "\nEmail: "+ r.getCliente().getCorreo() +"/nGenero: "+r.getCliente().getGenero()+"\n Llegada: "+r.getFechaLlegada()+"\nSalida: "+r.getFechaSalida()+"\nTipo de habitacion: "+r.getTipo_hab());
         }catch(Exception e){
             this.Resultado.setText("Error!! dato invalido");

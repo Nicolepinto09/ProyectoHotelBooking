@@ -7,17 +7,19 @@ package Interfaces;
 import Clases.Estado;
 import Clases.Reservacion;
 import Funciones.Helpers;
+import static Interfaces.Menu.estados;
+import static Interfaces.Menu.reservaciones;
 
 /**
  *
  * @author pedro
  */
-public class CheckOut extends javax.swing.JFrame {
+public class Checkout extends javax.swing.JFrame {
 
     /**
      * Creates new form Checkout
      */
-    public CheckOut() {
+    public Checkout() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -89,13 +91,13 @@ public class CheckOut extends javax.swing.JFrame {
         int count = 0;
         int num_hosp = 0;
         if (ci != -1){
-            Reservacion c = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), c.getReservacion());
+            Reservacion c = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion();
             if (count == 0){
                 this.Resultado.setText("No una reservacion que contega el numero de cedula ingresado");
             }else{
                 reservaciones.eliminar(ci);
                 Estado estado = new Estado(num_hosp, c.getCliente(), c.getFechaLlegada());
-                huespedes.eliminarEstado(estado);
+                estados.eliminarEstado(estado);
                 this.Resultado.setText("Se ha eliminado exitosamente de la base de datos, esperamos que haya disfrutado su estadia");
             }
         }else{
@@ -126,21 +128,23 @@ public class CheckOut extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckOut().setVisible(true);
+                new Checkout().setVisible(true);
             }
         });
     }
