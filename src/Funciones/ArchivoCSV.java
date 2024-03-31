@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  */
 public class ArchivoCSV {
     
-        private Helpers help = new Helpers();
+    private Helpers help = new Helpers();
 
     //funcion para leer archivo TXT
     public void Leer_reservas(ABB reservaciones) {
@@ -78,6 +78,8 @@ public class ArchivoCSV {
         }
 
     }
+        //funcion para leer archivo TXT
+
         public void Leer_habitaciones(AVL habitaciones) {
         String line;
         String expresion_txt = "";
@@ -119,7 +121,9 @@ public class ArchivoCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
     }
-    
+        
+        //funcion para leer archivo TXT
+
         public void Leer_Estado(HashTable table) {
         String line;
         String expresion_txt = "";
@@ -190,7 +194,8 @@ public class ArchivoCSV {
         }
     }
    
-            //funcion para leer archivo TXT
+    //funcion para leer archivo TXT
+        
     public void Leer_historial(AVL habitaciones) {
         String line;
         String expresion_txt = "";
@@ -228,8 +233,6 @@ public class ArchivoCSV {
                             
                             habitaciones.buscarPorClave(num_hab).getHistorial_hab().insertarFinal(estado);
 
-                            
-
                         } else {
                             JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
                             break;
@@ -242,7 +245,7 @@ public class ArchivoCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
 
-    }    
+    }
         
         
 }

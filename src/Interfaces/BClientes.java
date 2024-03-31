@@ -103,11 +103,15 @@ public class BClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        //Obtiene los valores del nombre y apellido desde componentes de interfaz de usuario:
         String name = nombre.getText();
         String lastName = apellido.getText();
+        
+        //Crea un objeto Cliente con los valores del nombre y el apellido obtenidos
         Cliente cliente = new Cliente(name, lastName);
         
-        
+        //Verifica si el cliente está hospedado en alguna habitación
         if (estados.indiceDeClienteEnHash(cliente) != -1){
             JOptionPane.showMessageDialog(null, "El cliente " + cliente.getNombre() + " "+ cliente.getApellido()+ " esta en la habitacion " + estados.indiceDeClienteEnHash(cliente));
         }else{

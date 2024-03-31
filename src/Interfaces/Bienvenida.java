@@ -21,8 +21,12 @@ public class Bienvenida extends javax.swing.JFrame {
     public static ABB reservaciones = new ABB();
     public static AVL habitaciones = new AVL();
     public static ListaSimple habitaciones_disponibles = new ListaSimple();
+    
     public Bienvenida() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setResizable(false);
     }
 
     /**
@@ -81,14 +85,11 @@ public class Bienvenida extends javax.swing.JFrame {
             int num_hab = (int) habitaciones_disponibles.getValor(i);
             habitaciones.buscarPorClave(num_hab).setDispo(true);
         }
-
-
+        
         Menu v1 = new Menu(this);
         this.setVisible(false);
         v1.setVisible(true);
         
-
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
