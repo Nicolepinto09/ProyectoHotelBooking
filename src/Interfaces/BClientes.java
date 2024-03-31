@@ -4,7 +4,10 @@
  */
 package Interfaces;
 
+import Clases.Cliente;
+import static Interfaces.Menu.estados;
 import static Interfaces.Menu.reservaciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,8 +38,8 @@ public class BClientes extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Ingresar = new javax.swing.JTextField();
-        Ingresar2 = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
+        apellido = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -55,8 +58,8 @@ public class BClientes extends javax.swing.JFrame {
 
         jLabel3.setText("Ingrese su apellido: ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-        jPanel1.add(Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 160, -1));
-        jPanel1.add(Ingresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 160, -1));
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 160, -1));
+        jPanel1.add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 160, -1));
 
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -86,12 +89,17 @@ public class BClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        try{
-            this.jTextArea1.setText(reservaciones.Buscar(this.Ingresar.getText(), this.Ingresar2.getText()).sout());
-        }catch(Exception e){
-            this.jTextArea1.setText("Error! Datos erroneos");
-    }                 
+        String name = nombre.getText();
+        String lastName = apellido.getText();
+        Cliente cliente = new Cliente(name, lastName);
+        
+        
+        if (estados.indiceDeClienteEnHash(cliente) != -1){
+            JOptionPane.showMessageDialog(null, "El cliente " + cliente.getNombre() + " "+ cliente.getApellido()+ " esta en la habitacion " + estados.indiceDeClienteEnHash(cliente));
+        }else{
+            JOptionPane.showMessageDialog(null, "El cliente "+ cliente.getNombre() +" "+ cliente.getApellido()+ " no esta hospedad");
+        }
+                       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
@@ -136,9 +144,8 @@ public class BClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Ingresar;
-    private javax.swing.JTextField Ingresar2;
     private javax.swing.JButton Menu;
+    private javax.swing.JTextField apellido;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -146,5 +153,6 @@ public class BClientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField nombre;
     // End of variables declaration//GEN-END:variables
 }
