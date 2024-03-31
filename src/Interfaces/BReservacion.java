@@ -89,8 +89,14 @@ public class BReservacion extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Helpers help = new Helpers();
+        
+        //Obtiene el valor de la cédula desde un componente de interfaz de usuario
         String cedula = input_ci.getText();
+        
+        //Valida la cédula utilizando el método ValidarCedula del objeto help
         int ci = help.ValidarCedula(cedula);
+        
+        //Verifica si la cédula es válida
         if(ci != -1){
             if(reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci) != null){
                 JOptionPane.showMessageDialog(null, reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion().toString());

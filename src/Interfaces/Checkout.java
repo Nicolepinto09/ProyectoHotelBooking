@@ -103,14 +103,19 @@ public class Checkout extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        //Obtención de los valores del nombre y el apellido desde componentes de la interfaz de usuario
         String nombre = input_nombre.getText();
         String apellido = input_apellido.getText();
         
+        //Creación de un objeto Cliente con los valores del nombre y el apellido obtenidos
         Cliente cliente = new Cliente(nombre, apellido);
         
+        
+        //Verificación de si el cliente está hospedado en alguna habitación
         if (estados.indiceDeClienteEnHash(cliente) != -1){
             Estado estado = estados.indiceDeEstadoEnHash(cliente);
-            habitaciones.buscarPorClave(estado.getNum_hab()).getHistorial_hab().insertarFinal(estado);
+            habitaciones.buscarPorClave(estado.getNumeroHabitacion()).getHistorial_hab().insertarFinal(estado);
             if(estados.eliminarEstado(estado)){
                 JOptionPane.showMessageDialog(null, "El cliente se ha ido del hotel");
             }else{

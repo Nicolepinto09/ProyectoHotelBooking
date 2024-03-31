@@ -35,6 +35,9 @@ public class HashTable {
         this.estado = estado;
     }
 
+    
+    //Inicia un arreglo de estados con valores nulos
+    
     public void initTable() {
         setEstado(new Estado[getSize()]);
         for (int i = 0; i < size; i++) {
@@ -42,9 +45,11 @@ public class HashTable {
         }
     }
 
+    //Inserta un nuevo estado en el arreglo de estados
+    
     public void insertEstado(Estado estado) {
         if (!estaEnHash(estado)) {
-            int index = estado.getNum_hab();
+            int index = estado.getNumeroHabitacion();
             while (getEstado()[index] != null) {
                 index++;
             }
@@ -55,6 +60,8 @@ public class HashTable {
         }
     }
 
+    //Verifica si un estado ya está presente en el arreglo de estados
+    
     public boolean estaEnHash(Estado est) {
         boolean aux = false;
         for (int i = 0; i < this.getEstado().length; i++) {
@@ -67,6 +74,8 @@ public class HashTable {
         return aux;
     }
 
+    //Encuentra el índice de un estado en el arreglo de estados
+    
     public int indiceEnHash(Estado est) {
         for (int i = 0; i < this.getEstado().length; i++) {
             if (getEstado()[i] != null) {
@@ -79,6 +88,8 @@ public class HashTable {
         return -1;
     }
 
+    //Encuentra el índice de un cliente en el arreglo de estados
+    
     public int indiceDeClienteEnHash(Cliente cliente) {
         for (int i = 0; i < this.getEstado().length; i++) {
             if (getEstado()[i] != null) {
@@ -97,6 +108,8 @@ public class HashTable {
         return -1;
     }
 
+    //Encuentra el estado asociado a un cliente en el arreglo de estados
+    
     public Estado indiceDeEstadoEnHash(Cliente cliente) {
         for (int i = 0; i < this.getEstado().length; i++) {
             if (getEstado()[i] != null) {
@@ -116,6 +129,8 @@ public class HashTable {
 
         return null;
     }
+    
+    //Agrega un acompañante a un estado dado.
 
     public void AgregarAcompañante(Cliente cliente, Cliente acomp) {
         for (int i = 0; i < this.getEstado().length; i++) {
@@ -127,6 +142,8 @@ public class HashTable {
         }
     }
 
+    //Encuentra las habitaciones disponibles y las agrega a una lista
+    
     public void Disponibles(ListaSimple hab_disp) {
         for (int i = 1; i < this.getEstado().length; i++) {
             if (getEstado()[i] == null) {
@@ -135,6 +152,8 @@ public class HashTable {
         }
     }
 
+    //Elimina un estado dado del arreglo de estados
+    
     public boolean eliminarEstado(Estado estadoAEliminar) {
         int indice = indiceEnHash(estadoAEliminar);
         if (indice != -1) {
