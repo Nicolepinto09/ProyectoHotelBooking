@@ -4,26 +4,34 @@
  */
 package Interfaces;
 
+import Clases.Cliente;
 import Clases.Estado;
 import Clases.Reservacion;
 import Funciones.Helpers;
+import static Interfaces.Bienvenida.estados;
+import static Interfaces.Bienvenida.habitaciones;
+import static Interfaces.Bienvenida.reservaciones;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author pedro
  */
-public class CheckOut extends javax.swing.JFrame {
+public class Checkout extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Checkout
-     */
-    public CheckOut() {
+               public static Menu v3;
+
+    public Checkout(Menu v3) {
         initComponents();
+                this.v3 = v3;
+        v3.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setVisible(true);
-    }
 
+
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,11 +44,11 @@ public class CheckOut extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        input_ci = new javax.swing.JTextField();
+        input_nombre = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Resultado = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
+        input_apellido = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,9 +58,9 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel1.setText("Registro de salida");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
-        jLabel2.setText("Ingrese su cedula: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 140, -1));
+        jLabel2.setText("Ingrese su nombre: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jPanel1.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 140, -1));
 
         jButton2.setText("Menu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -62,19 +70,17 @@ public class CheckOut extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
-        Resultado.setColumns(20);
-        Resultado.setRows(5);
-        jScrollPane1.setViewportView(Resultado);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 250, 120));
-
-        jButton3.setText("Salir");
+        jButton3.setText("Check Out");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
+        jPanel1.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 140, -1));
+
+        jLabel3.setText("Ingrese su apellido:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -83,30 +89,31 @@ public class CheckOut extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Helpers help = new Helpers();
-        String cedula = input_ci.getText();
-        int ci = help.ValidarCedula(cedula);
-        int count = 0;
-        int num_hosp = 0;
-        if (ci != -1){
-            Reservacion c = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), c.getReservacion());
-            if (count == 0){
-                this.Resultado.setText("No una reservacion que contega el numero de cedula ingresado");
+        String nombre = input_nombre.getText();
+        String apellido = input_apellido.getText();
+        
+        Cliente cliente = new Cliente(nombre, apellido);
+        
+        if (estados.indiceDeClienteEnHash(cliente) != -1){
+            Estado estado = estados.indiceDeEstadoEnHash(cliente);
+            habitaciones.buscarPorClave(estado.getNum_hab()).getHistorial_hab().insertarFinal(estado);
+            if(estados.eliminarEstado(estado)){
+                JOptionPane.showMessageDialog(null, "El cliente se ha ido del hotel");
             }else{
-                reservaciones.eliminar(ci);
-                Estado estado = new Estado(num_hosp, c.getCliente(), c.getFechaLlegada());
-                huespedes.eliminarEstado(estado);
-                this.Resultado.setText("Se ha eliminado exitosamente de la base de datos, esperamos que haya disfrutado su estadia");
+                JOptionPane.showMessageDialog(null, "El cliente no se encuentra hospedado");
+            
             }
+        
         }else{
-            this.Resultado.setText("La cedula " + ci + "no se encuentra en la base de datos de la compañía");
+            JOptionPane.showMessageDialog(null, "El cliente no se encuentra hospedado");
         }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Menu i = new Menu();
-        this.dispose();
+        this.setVisible(false);
+        v3.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -126,33 +133,35 @@ public class CheckOut extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CheckOut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Checkout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckOut().setVisible(true);
+                new Checkout(v3).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Resultado;
-    private javax.swing.JTextField input_ci;
+    private javax.swing.JTextField input_apellido;
+    private javax.swing.JTextField input_nombre;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

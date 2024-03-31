@@ -5,6 +5,10 @@
 package Interfaces;
 
 import Clases.Reservacion;
+import EDD.NodoABB;
+import Funciones.Helpers;
+import static Interfaces.Bienvenida.reservaciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,14 +16,14 @@ import Clases.Reservacion;
  */
 public class BReservacion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BusquedaReservacion
-     */
-    public BReservacion() {
+        public static Menu v4;
+
+    public BReservacion(Menu v4) {
         initComponents();
+        this.v4 = v4;
+        v4.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setVisible(true);
     }
 
     /**
@@ -35,10 +39,8 @@ public class BReservacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Menu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        input_ci = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Resultado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,11 +56,11 @@ public class BReservacion extends javax.swing.JFrame {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
 
         jLabel2.setText("Ingrese su cedula para buscarlo en la base de datos:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 130, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 130, -1));
 
         jButton3.setText("Search");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -68,31 +70,31 @@ public class BReservacion extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
 
-        Resultado.setColumns(20);
-        Resultado.setRows(5);
-        jScrollPane1.setViewportView(Resultado);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 250, 110));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        try{
-           Reservacion r = reservas.buscarNodo(reservas.getNodoRaiz(),Integer.parseInt(this.IngresarC.getText()));
-            this.Resultado.setText("Nombre: "+ r.getCliente().getNombre() +" "+ r.getCliente().getApellido() +"\nCelular: "+ r.getCliente().getTelefono() + "\nEmail: "+ r.getCliente().getCorreo() +"/nGenero: "+r.getCliente().getGenero()+"\n Llegada: "+r.getFechaLlegada()+"\nSalida: "+r.getFechaSalida()+"\nTipo de habitacion: "+r.getTipo_hab());
-        }catch(Exception e){
-            this.Resultado.setText("Error!! dato invalido");
-       }
+        Helpers help = new Helpers();
+        String cedula = input_ci.getText();
+        int ci = help.ValidarCedula(cedula);
+        if(ci != -1){
+            if(reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci) != null){
+                JOptionPane.showMessageDialog(null, reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion().toString());
+            }else{
+               JOptionPane.showMessageDialog(null, "No exite un cliente con esta reservacion");
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "La cedula es invalida");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         // TODO add your handling code here:
-        Menu i = new Menu();
-        this.dispose();
+        this.setVisible(false);
+        v4.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
 
     /**
@@ -126,19 +128,17 @@ public class BReservacion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BReservacion().setVisible(true);
+                new BReservacion(v4).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Menu;
-    private javax.swing.JTextArea Resultado;
+    private javax.swing.JTextField input_ci;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

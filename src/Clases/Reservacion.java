@@ -79,7 +79,6 @@ public class Reservacion {
 
     @Override
     public String toString() {
-        return "Reservacion{" + "cliente=" + cliente + ", tipo_hab=" + tipo_hab + ", fechaLlegada=" + fechaLlegada + ", fechaSalida=" + fechaSalida + '}';
-    }
+        return "Cliente:" + cliente.getNombre() +" " + cliente.getApellido() + ", "+cliente.getCedula() + "\nTipo de Habitacion:" + tipo_hab + "\nFecha de Llegada:" + fechaLlegada + "\nFecha de Salida:" + fechaSalida;    }
     
 }
