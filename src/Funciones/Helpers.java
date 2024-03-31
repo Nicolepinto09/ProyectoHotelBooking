@@ -12,8 +12,7 @@ public class Helpers {
     private boolean validarnumeros(String num){
         return num.matches("[0-9]*");
     }
-    
-    
+
     public int ValidarNumeros(String numero){
         if(validarnumeros(numero)== true){
             int num = Integer.parseInt(numero);
@@ -34,7 +33,7 @@ public class Helpers {
     public int ValidarCedula(String ci){
         String replaceAll = ci.replace(".", "");
         if(validarnumeros(replaceAll)== true){
-            if(replaceAll.length() >= 6 && replaceAll.length()<= 9){
+            if(replaceAll.length() >= 6 && replaceAll.length()<= 8){
                 int num = Integer.parseInt(replaceAll);
                 return num;
             }else{

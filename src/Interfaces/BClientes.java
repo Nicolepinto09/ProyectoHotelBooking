@@ -5,8 +5,9 @@
 package Interfaces;
 
 import Clases.Cliente;
-import static Interfaces.Menu.estados;
-import static Interfaces.Menu.reservaciones;
+import static Interfaces.Bienvenida.estados;
+import static Interfaces.Historial.v6;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -15,14 +16,13 @@ import javax.swing.JOptionPane;
  */
 public class BClientes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BClientes
-     */
-    public BClientes() {
+    public static Menu v5;
+    public BClientes(Menu v5) {
         initComponents();
+        this.v5 = v5;
+        v5.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setVisible(true);
     }
 
     /**
@@ -104,8 +104,8 @@ public class BClientes extends javax.swing.JFrame {
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         // TODO add your handling code here:
-        Menu i = new Menu();
-        this.dispose();
+        this.setVisible(false);
+        v5.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
 
     /**
@@ -138,7 +138,7 @@ public class BClientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BClientes().setVisible(true);
+                new BClientes(v5).setVisible(true);
             }
         });
     }

@@ -6,7 +6,7 @@ package Interfaces;
 
 import Clases.Habitacion;
 import Funciones.Helpers;
-import static Interfaces.Menu.habitaciones;
+import static Interfaces.Bienvenida.habitaciones;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,16 +15,16 @@ import javax.swing.JOptionPane;
  */
 public class Historial extends javax.swing.JFrame {
 
-    /**
-     * Creates new form HistorialHabitacion
-     */
-    public Historial() {
+
+    public static Menu v6;
+    
+    public Historial(Menu v6) {
         initComponents();
+        this.v6 = v6;
+        v6.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setVisible(true);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,8 +39,6 @@ public class Historial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         input_numHab = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Resultado = new javax.swing.JTextArea();
         Menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,9 +51,9 @@ public class Historial extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese la habitación que desea buscar:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, -1));
-        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 100, -1));
+        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, -1));
 
-        jButton2.setText("Search");
+        jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -63,19 +61,13 @@ public class Historial extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
-        Resultado.setColumns(20);
-        Resultado.setRows(5);
-        jScrollPane1.setViewportView(Resultado);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 240, 140));
-
         Menu.setText("Menú");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -105,8 +97,8 @@ public class Historial extends javax.swing.JFrame {
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         // TODO add your handling code here:
-        Menu i = new Menu();
-        this.dispose();
+        this.setVisible(false);
+        v6.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
 
     /**
@@ -142,19 +134,17 @@ public class Historial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Historial().setVisible(true);
+                new Historial(v6).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Menu;
-    private javax.swing.JTextArea Resultado;
     private javax.swing.JTextField input_numHab;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

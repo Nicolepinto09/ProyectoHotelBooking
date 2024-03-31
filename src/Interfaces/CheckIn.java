@@ -7,8 +7,12 @@ package Interfaces;
 import Clases.Estado;
 import Clases.Reservacion;
 import Funciones.Helpers;
-import static Interfaces.Menu.estados;
-import static Interfaces.Menu.reservaciones;
+import static Interfaces.Bienvenida.estados;
+import static Interfaces.Bienvenida.habitaciones;
+import static Interfaces.Bienvenida.habitaciones_disponibles;
+import static Interfaces.Bienvenida.reservaciones;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -16,14 +20,14 @@ import static Interfaces.Menu.reservaciones;
  */
 public class CheckIn extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CheckIn
-     */
-    public CheckIn() {
+            public static Menu v2;
+
+    public CheckIn(Menu v2) {
         initComponents();
+        this.v2 = v2;
+        v2.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setVisible(true);
     }
 
     /**
@@ -39,8 +43,6 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         input_ci = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Resultado = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
 
@@ -53,22 +55,16 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
 
         jLabel2.setText("Ingrese su cedula:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
         jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 150, -1));
 
-        Resultado.setColumns(20);
-        Resultado.setRows(5);
-        jScrollPane1.setViewportView(Resultado);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 240, 120));
-
-        jButton2.setText("Start");
+        jButton2.setText("Guardar huesped");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
         Menu.setText("Menú");
         Menu.addActionListener(new java.awt.event.ActionListener() {
@@ -90,25 +86,45 @@ public class CheckIn extends javax.swing.JFrame {
         int ci = help.ValidarCedula(cedula);
         int count = 0;
         int num_hosp = 0;
-        if (ci != -1){
-            Reservacion c = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion();
-            if (count == 0){
-                this.Resultado.setText("No hay la habitacion del tipo deseada");
+        
+        //System.out.println(habitaciones_disponibles.Transformar());
+        
+        if(ci != -1){
+            Reservacion reservacion = reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion();
+            
+            for (int i = 0; i < habitaciones_disponibles.getSize(); i++) {
+                int num_hab = (int) habitaciones_disponibles.getValor(i);
+                
+                if(habitaciones.buscarPorClave(num_hab).getTipo_hab().equalsIgnoreCase(reservacion.getTipo_hab())){
+                    habitaciones.buscarPorClave(num_hab).setDispo(false);
+                    //System.out.println(num_hab);
+                    num_hosp = num_hab;
+                    count += 1;
+                    break;
+                }
+                
+            }
+            
+            if(count == 0){
+                JOptionPane.showMessageDialog(null, "No hay habitacion del tipo deseado diponible en estos momentos");
             }else{
                 reservaciones.eliminar(ci);
-                Estado estado = new Estado(num_hosp, c.getCliente(), c.getFechaLlegada());
+                Estado estado = new Estado(num_hosp, reservacion.getCliente(), reservacion.getFechaLlegada());
                 estados.insertEstado(estado);
-                this.Resultado.setText("Se le ha asignado la habitacion: " + num_hosp);
+                JOptionPane.showMessageDialog(null, "Se le ha asignado la habitacion " + num_hosp);
             }
+            
+            
+           
         }else{
-            this.Resultado.setText("La cedula " + ci + "no se encuentra en la base de datos de la compañía");
+            JOptionPane.showMessageDialog(null, "La cedula es invalida");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         // TODO add your handling code here:
-        Menu i = new Menu();
-        this.dispose();
+        this.setVisible(false);
+        v2.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
 
     /**
@@ -141,19 +157,17 @@ public class CheckIn extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckIn().setVisible(true);
+                new CheckIn(v2).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Menu;
-    private javax.swing.JTextArea Resultado;
     private javax.swing.JTextField input_ci;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
