@@ -62,7 +62,10 @@ public class Estado {
         return "Numero de habitacion:" + numeroHabitacion + ", cliente:" + cliente.getCedula() + ", llegada:" + fechaLlegada + '\n';
     }
 
-    /*Compara si dos documentos son iguales*/
+    //Compara los números de teléfono de los clientes asociados a ambos estados
+    //Compara los nombres de los clientes asociados a ambos estados
+    
+    
     public boolean compareEstado(Estado estado) {
         return (estado.getCliente().getTelefono() == null ? this.cliente.getTelefono() == null : estado.getCliente().getTelefono().equals(this.cliente.getTelefono())) && estado.getCliente().getNombre().equalsIgnoreCase(this.cliente.getNombre());
     }

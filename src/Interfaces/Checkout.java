@@ -65,7 +65,7 @@ public class Checkout extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese su nombre: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-        jPanel1.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 140, -1));
+        jPanel1.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 140, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Menú");
@@ -74,7 +74,7 @@ public class Checkout extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton3.setText("Check Out");
@@ -84,7 +84,7 @@ public class Checkout extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
-        jPanel1.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 140, -1));
+        jPanel1.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, -1));
 
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));

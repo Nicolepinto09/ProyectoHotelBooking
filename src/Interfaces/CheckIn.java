@@ -55,13 +55,13 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 204, 51));
         jLabel1.setText("REGISTRO DE ENTRADA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese su cédula:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Guardar huesped");
@@ -79,7 +79,7 @@ public class CheckIn extends javax.swing.JFrame {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FCheckIn.jpg"))); // NOI18N
         jLabel3.setText("jLabel1");
