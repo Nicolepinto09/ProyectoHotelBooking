@@ -15,13 +15,9 @@ import EDD.ListaSimple;
  */
 public class Menu extends javax.swing.JFrame {
 
+  public static Bienvenida v1;
     
-    public static HashTable estados = new HashTable();
-    public static ABB reservaciones = new ABB();
-    public static AVL habitaciones = new AVL();
-    public static ListaSimple habitaciones_disponibles = new ListaSimple();
-    
-    public Menu() {
+    public Menu(Bienvenida v1) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -114,32 +110,42 @@ public class Menu extends javax.swing.JFrame {
 
     private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
         // TODO add your handling code here:
-        BClientes i = new BClientes();
-        this.dispose();
+      BClientes v5 = new BClientes (this);
+        this.setVisible(false);
+        v5.setVisible(true); 
+
     }//GEN-LAST:event_ClientesActionPerformed
 
     private void ReservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservacionActionPerformed
         // TODO add your handling code here:
-        BReservacion i = new BReservacion();
-        this.dispose();
+         BReservacion v4 = new BReservacion(this);
+        this.setVisible(false);
+        v4.setVisible(true);
+
     }//GEN-LAST:event_ReservacionActionPerformed
 
     private void HabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HabitacionActionPerformed
         // TODO add your handling code here:
-        Historial i = new Historial();
-        this.dispose();
+      
+         Historial v6 = new Historial(this);
+        this.setVisible(false);
+        v6.setVisible(true);
+
     }//GEN-LAST:event_HabitacionActionPerformed
 
     private void InActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InActionPerformed
         // TODO add your handling code here:
-        CheckIn i = new CheckIn();
-        this.dispose();
+                CheckIn v2 = new CheckIn(this);
+        this.setVisible(false);
+        v2.setVisible(true);
     }//GEN-LAST:event_InActionPerformed
 
     private void OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutActionPerformed
         // TODO add your handling code here:
-        Checkout i = new Checkout();
-        this.dispose();
+         Checkout v3 = new Checkout(this);
+        this.setVisible(false);
+        v3.setVisible(true);
+        
     }//GEN-LAST:event_OutActionPerformed
 
     /**
@@ -172,7 +178,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu(v1).setVisible(true);
             }
         });
     }
