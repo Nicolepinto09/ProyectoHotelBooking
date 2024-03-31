@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Clases.Reservacion;
+import EDD.NodoABB;
 import static Interfaces.Menu.reservaciones;
 
 /**
@@ -36,7 +37,7 @@ public class BReservacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Menu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        IngresarC = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Resultado = new javax.swing.JTextArea();
@@ -59,7 +60,7 @@ public class BReservacion extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese su cedula para buscarlo en la base de datos:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 130, -1));
+        jPanel1.add(IngresarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 130, -1));
 
         jButton3.setText("Search");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +84,8 @@ public class BReservacion extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try{
-           Reservacion r = reservaciones.buscarNodo(reservaciones.getNodoRaiz(),Integer.parseInt(this.IngresarC.getText()));
-            this.Resultado.setText("Nombre: "+ r.getCliente().getNombre() +" "+ r.getCliente().getApellido() +"\nCelular: "+ r.getCliente().getTelefono() + "\nEmail: "+ r.getCliente().getCorreo() +"/nGenero: "+r.getCliente().getGenero()+"\n Llegada: "+r.getFechaLlegada()+"\nSalida: "+r.getFechaSalida()+"\nTipo de habitacion: "+r.getTipo_hab());
+           NodoABB r = reservaciones.buscarNodo(reservaciones.getNodoRaiz(),Integer.parseInt(this.IngresarC.getText()));
+            this.Resultado.setText("Nombre: "+ r.getReservacion().getCliente().getNombre() +" "+ r.getReservacion().getCliente().getApellido() +"\nCelular: "+ r.getReservacion().getCliente().getTelefono() + "\nEmail: "+ r.getReservacion().getCliente().getCorreo() +"/nGenero: "+r.getReservacion().getCliente().getGenero()+"\n Llegada: "+r.getReservacion().getFechaLlegada()+"\nSalida: "+r.getReservacion().getFechaSalida()+"\nTipo de habitacion: "+r.getReservacion().getTipo_hab());
         }catch(Exception e){
             this.Resultado.setText("Error!! dato invalido");
        }
@@ -133,6 +134,7 @@ public class BReservacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField IngresarC;
     private javax.swing.JButton Menu;
     private javax.swing.JTextArea Resultado;
     private javax.swing.JButton jButton3;
@@ -140,6 +142,5 @@ public class BReservacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

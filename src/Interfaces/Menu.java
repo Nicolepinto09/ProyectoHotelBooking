@@ -126,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void HabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HabitacionActionPerformed
         // TODO add your handling code here:
-        HHabitacion i = new HHabitacion();
+        Historial i = new Historial();
         this.dispose();
     }//GEN-LAST:event_HabitacionActionPerformed
 

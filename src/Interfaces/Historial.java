@@ -5,17 +5,20 @@
 package Interfaces;
 
 import Clases.Habitacion;
+import Funciones.Helpers;
+import static Interfaces.Menu.habitaciones;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author pedro
  */
-public class HHabitacion extends javax.swing.JFrame {
+public class Historial extends javax.swing.JFrame {
 
     /**
      * Creates new form HistorialHabitacion
      */
-    public HHabitacion() {
+    public Historial() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -34,7 +37,7 @@ public class HHabitacion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        clave_hab = new javax.swing.JTextField();
+        input_numHab = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Resultado = new javax.swing.JTextArea();
@@ -50,7 +53,7 @@ public class HHabitacion extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese la habitación que desea buscar:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, -1));
-        jPanel1.add(clave_hab, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 100, -1));
+        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 100, -1));
 
         jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,12 +84,23 @@ public class HHabitacion extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        try{
-            Habitacion i = habitacion.buscarPorClave(Integer.parseInt(clave_hab));
-            this.Resultado.setText(i.mostrar_historial());
-        }catch(Exception e){
-            this.Resultado.setText("Numero de habitacion no valida");
+        Helpers help = new Helpers();
+        String num = input_numHab.getText();
+        int num_hab = help.ValidarNumeros(num);
+        
+        if(num_hab != -1){
+            
+            if(habitaciones.buscarPorClave(num_hab) != null){
+                JOptionPane.showMessageDialog(null, habitaciones.buscarPorClave(num_hab).mostrar_historial());
+            
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el numero de habitacion");
+            
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Numero de Habitacion invalido");
         }
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
@@ -112,21 +126,23 @@ public class HHabitacion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HHabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HHabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HHabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HHabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HHabitacion().setVisible(true);
+                new Historial().setVisible(true);
             }
         });
     }
@@ -134,7 +150,7 @@ public class HHabitacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Menu;
     private javax.swing.JTextArea Resultado;
-    private javax.swing.JTextField clave_hab;
+    private javax.swing.JTextField input_numHab;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

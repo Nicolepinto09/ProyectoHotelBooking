@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import static Interfaces.Menu.reservaciones;
+
 /**
  *
  * @author pedro
@@ -33,8 +35,8 @@ public class BClientes extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Ingresar = new javax.swing.JTextField();
+        Ingresar2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,8 +55,8 @@ public class BClientes extends javax.swing.JFrame {
 
         jLabel3.setText("Ingrese su apellido: ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 160, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 160, -1));
+        jPanel1.add(Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 160, -1));
+        jPanel1.add(Ingresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 160, -1));
 
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +67,6 @@ public class BClientes extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
 
         Menu.setText("Menú");
-        Menu.setActionCommand("Menú");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
@@ -87,7 +88,7 @@ public class BClientes extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try{
-            this.jTextArea1.setText(reservas.Buscar(this.Ingresar.getText(), this.Ingresar2.getText()).sout());
+            this.jTextArea1.setText(reservaciones.Buscar(this.Ingresar.getText(), this.Ingresar2.getText()).sout());
         }catch(Exception e){
             this.jTextArea1.setText("Error! Datos erroneos");
     }                 
@@ -135,6 +136,8 @@ public class BClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Ingresar;
+    private javax.swing.JTextField Ingresar2;
     private javax.swing.JButton Menu;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -143,7 +146,5 @@ public class BClientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
