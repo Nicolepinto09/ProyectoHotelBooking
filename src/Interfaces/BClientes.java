@@ -38,75 +38,64 @@ public class BClientes extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        Menu = new javax.swing.JButton();
         nombre = new javax.swing.JTextField();
         apellido = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        Menu = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 1, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setText("BÚSQUEDA DE CLIENTES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 51));
+        jLabel1.setText("BÚSQUEDA DEL CLIENTE");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel2.setText("- Nombre del cliente:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ingrese su nombre: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-<<<<<<< HEAD
-        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel3.setText("- Apellido del cliente:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
-=======
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ingrese su apellido: ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
         jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 160, -1));
         jPanel1.add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 160, -1));
->>>>>>> develop
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Buscar");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 80, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 90, -1));
 
         Menu.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Menu.setText("Menú");
-        Menu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 80, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
-        nombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
-            }
-        });
-        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 160, -1));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
-        apellido.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jPanel1.add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 160, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 240, 120));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FClientes.jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -90, -1, 410));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FCheckIn.jpg"))); // NOI18N
+        jLabel4.setText("jLabel1");
+        jLabel4.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 490, 300));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -124,9 +113,9 @@ public class BClientes extends javax.swing.JFrame {
         
         //Verifica si el cliente está hospedado en alguna habitación
         if (estados.indiceDeClienteEnHash(cliente) != -1){
-            JOptionPane.showMessageDialog(null, "El cliente " + cliente.getNombre() + " "+ cliente.getApellido()+ " se encuentra alojado en la habitación " + estados.indiceDeClienteEnHash(cliente) + ".");
+            JOptionPane.showMessageDialog(null, "El cliente " + cliente.getNombre() + " "+ cliente.getApellido()+ " esta en la habitacion " + estados.indiceDeClienteEnHash(cliente));
         }else{
-            JOptionPane.showMessageDialog(null, "El cliente "+ cliente.getNombre() +" "+ cliente.getApellido()+ " no está hospedado.");
+            JOptionPane.showMessageDialog(null, "El cliente "+ cliente.getNombre() +" "+ cliente.getApellido()+ " no esta hospedad");
         }
                        
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -136,10 +125,6 @@ public class BClientes extends javax.swing.JFrame {
         this.setVisible(false);
         v5.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
-
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,8 +168,10 @@ public class BClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField nombre;
     // End of variables declaration//GEN-END:variables
 }
