@@ -68,7 +68,7 @@ public class BReservacion extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         input_ci.setFont(new java.awt.Font("Cambria", 1, 15)); // NOI18N
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 130, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 130, -1));
 
         jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton3.setText("Buscar");
@@ -77,7 +77,7 @@ public class BReservacion extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 80, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 80, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/WhatsApp Image 2024-03-31 at 8.39.50 PM.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
