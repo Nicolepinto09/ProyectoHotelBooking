@@ -11,25 +11,25 @@ import EDD.ListaSimple;
  * @author nicolepinto
  */
 public class Estado {
-    private int num_hab;
+    private int numeroHabitacion;
     private Cliente cliente;
     private String fechaLlegada;
     private ListaSimple acompañantes;
 
 
-    public Estado(int num_hab, Cliente cliente, String fechaLlegada) {
-        this.num_hab = num_hab;
+    public Estado(int numeroHabitacion, Cliente cliente, String fechaLlegada) {
+        this.numeroHabitacion = numeroHabitacion;
         this.cliente = cliente;
         this.fechaLlegada = fechaLlegada;
         this.acompañantes = new ListaSimple();
     }
 
-    public int getNum_hab() {
-        return num_hab;
+    public int getNumeroHabitacion() {
+        return numeroHabitacion;
     }
 
-    public void setNum_hab(int num_hab) {
-        this.num_hab = num_hab;
+    public void setNumeroHabitacion(int numeroHabitacion) {
+        this.numeroHabitacion = numeroHabitacion;
     }
 
     public Cliente getCliente() {
@@ -57,14 +57,15 @@ public class Estado {
     }
     
     
-
-    // Arregla el to String para que imprima bonito
     @Override
     public String toString() {
-        return "num_hab=" + num_hab + ", cliente=" + cliente.getCedula() + ", llegada=" + fechaLlegada + '\n';
+        return "Numero de habitacion:" + numeroHabitacion + ", cliente:" + cliente.getCedula() + ", llegada:" + fechaLlegada + '\n';
     }
 
-    /*Compara si dos documentos son iguales*/
+    //Compara los números de teléfono de los clientes asociados a ambos estados
+    //Compara los nombres de los clientes asociados a ambos estados
+    
+    
     public boolean compareEstado(Estado estado) {
         return (estado.getCliente().getTelefono() == null ? this.cliente.getTelefono() == null : estado.getCliente().getTelefono().equals(this.cliente.getTelefono())) && estado.getCliente().getNombre().equalsIgnoreCase(this.cliente.getNombre());
     }

@@ -51,7 +51,11 @@ public class BReservacion extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 26)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("BÚSQUEDA DE RESERVACIÓN");
+<<<<<<< HEAD
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+=======
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+>>>>>>> develop
 
         Menu.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Menu.setText("Menú");
@@ -61,6 +65,7 @@ public class BReservacion extends javax.swing.JFrame {
                 MenuActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 70, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -78,12 +83,28 @@ public class BReservacion extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton3.setText("Buscar");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 153, 255), 3));
+=======
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ingrese su cédula para buscarlo en la base de datos:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, -1));
+
+        jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jButton3.setText("Buscar");
+>>>>>>> develop
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 70, -1));
+=======
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+>>>>>>> develop
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FReservacion.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -96,8 +117,14 @@ public class BReservacion extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Helpers help = new Helpers();
+        
+        //Obtiene el valor de la cédula desde un componente de interfaz de usuario
         String cedula = input_ci.getText();
+        
+        //Valida la cédula utilizando el método ValidarCedula del objeto help
         int ci = help.ValidarCedula(cedula);
+        
+        //Verifica si la cédula es válida
         if(ci != -1){
             if(reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci) != null){
                 JOptionPane.showMessageDialog(null, reservaciones.buscarNodo(reservaciones.getNodoRaiz(), ci).getReservacion().toString());

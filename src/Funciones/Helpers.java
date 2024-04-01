@@ -4,15 +4,17 @@ import javax.swing.JOptionPane;
 
 public class Helpers {
     
-     
+    //Esta función verifica si una cadena de texto contiene solo letras (mayúsculas, minúsculas o caracteres especiales como la letra "ñ")
     public boolean validarletras(String letra){
         return letra.matches("[a-zA-Zñ]*");
     }
     
+    //Verifica si una cadena de texto contiene solo números
     private boolean validarnumeros(String num){
         return num.matches("[0-9]*");
     }
 
+    //Esta función verifica si una cadena de texto contiene solo números y la convierte a un entero si es así
     public int ValidarNumeros(String numero){
         if(validarnumeros(numero)== true){
             int num = Integer.parseInt(numero);
@@ -21,7 +23,7 @@ public class Helpers {
             return -1;
         }
     }
-    //Escribir un validar nombre y validar sexo ya que tienen algunos simbolos y daba error
+// Verifica si una cadena de texto contiene solo letras utilizando la función validarletras    
     public String ValidarLetras(String letras){
         if (validarletras(letras) == true) {
             return letras;
@@ -29,7 +31,8 @@ public class Helpers {
             return null;
         }
     }
-    
+      
+    //Verifica si una cadena de texto contiene solo números y si tiene una longitud válida para representar un número de cédula
     public int ValidarCedula(String ci){
         String replaceAll = ci.replace(".", "");
         if(validarnumeros(replaceAll)== true){
@@ -44,11 +47,8 @@ public class Helpers {
         }
     }
     
-    public String ValidarFecha(String fecha){
-            return null;
-    }
-    
-    public String ValidarTelf(String telefono){
+    //Verifica si una cadena de texto representa un número de teléfono válido
+    public String Validartelf(String telefono){
         String cell = telefono.replaceAll(" ", "");
         if (cell.charAt(0) == '(') {
             if (cell.charAt(4) == ')') {
@@ -67,6 +67,7 @@ public class Helpers {
         }
     }
     
+    //Verifica si una cadena de texto representa una dirección de correo electrónico válida
     public String ValidarCorreo(String correo){
         int count = 0;
         for (int i = 0; i < correo.length(); i++) {
@@ -81,9 +82,10 @@ public class Helpers {
         }
     }
     
-    public String Validar_TipoHab(String tipo_hab){
-        if(tipo_hab.equalsIgnoreCase("simple") || tipo_hab.equalsIgnoreCase("doble") || tipo_hab.equalsIgnoreCase("triple") || tipo_hab.equalsIgnoreCase("suite")){
-            return tipo_hab;
+    //Verifica si una cadena de texto representa un tipo válido de habitación, como "simple", "doble", "triple" o "suite"
+    public String Validar_TipoHab(String tipodeHabitacion){
+        if(tipodeHabitacion.equalsIgnoreCase("simple") || tipodeHabitacion.equalsIgnoreCase("doble") || tipodeHabitacion.equalsIgnoreCase("triple") || tipodeHabitacion.equalsIgnoreCase("suite")){
+            return tipodeHabitacion;
         }else{
               return null;
         }

@@ -59,10 +59,19 @@ public class BClientes extends javax.swing.JFrame {
         jLabel2.setText("- Nombre del cliente:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
+<<<<<<< HEAD
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("- Apellido del cliente:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+=======
+        jLabel3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Ingrese su apellido: ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 160, -1));
+        jPanel1.add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 160, -1));
+>>>>>>> develop
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Buscar");
@@ -105,11 +114,15 @@ public class BClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        //Obtiene los valores del nombre y apellido desde componentes de interfaz de usuario:
         String name = nombre.getText();
         String lastName = apellido.getText();
+        
+        //Crea un objeto Cliente con los valores del nombre y el apellido obtenidos
         Cliente cliente = new Cliente(name, lastName);
         
-        
+        //Verifica si el cliente está hospedado en alguna habitación
         if (estados.indiceDeClienteEnHash(cliente) != -1){
             JOptionPane.showMessageDialog(null, "El cliente " + cliente.getNombre() + " "+ cliente.getApellido()+ " se encuentra alojado en la habitación " + estados.indiceDeClienteEnHash(cliente) + ".");
         }else{

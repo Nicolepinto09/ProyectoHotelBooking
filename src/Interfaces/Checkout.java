@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class Checkout extends javax.swing.JFrame {
 
-               public static Menu v3;
+    public static Menu v3;
 
     public Checkout(Menu v3) {
         initComponents();
@@ -65,7 +65,7 @@ public class Checkout extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese su nombre: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-        jPanel1.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 140, -1));
+        jPanel1.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 140, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Menú");
@@ -74,7 +74,7 @@ public class Checkout extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton3.setText("Check Out");
@@ -84,7 +84,7 @@ public class Checkout extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
-        jPanel1.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 140, -1));
+        jPanel1.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, -1));
 
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,14 +103,19 @@ public class Checkout extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        //Obtención de los valores del nombre y el apellido desde componentes de la interfaz de usuario
         String nombre = input_nombre.getText();
         String apellido = input_apellido.getText();
         
+        //Creación de un objeto Cliente con los valores del nombre y el apellido obtenidos
         Cliente cliente = new Cliente(nombre, apellido);
         
+        
+        //Verificación de si el cliente está hospedado en alguna habitación
         if (estados.indiceDeClienteEnHash(cliente) != -1){
             Estado estado = estados.indiceDeEstadoEnHash(cliente);
-            habitaciones.buscarPorClave(estado.getNum_hab()).getHistorial_hab().insertarFinal(estado);
+            habitaciones.buscarPorClave(estado.getNumeroHabitacion()).getHistorial_hab().insertarFinal(estado);
             if(estados.eliminarEstado(estado)){
                 JOptionPane.showMessageDialog(null, "El cliente se ha ido del hotel");
             }else{

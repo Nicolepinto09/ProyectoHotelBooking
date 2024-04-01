@@ -57,7 +57,16 @@ public class NodoAVL {
     public void setDerecha(NodoAVL derecha) {
         this.derecha = derecha;
     }
-        
+
+    public Habitacion getHab() {
+        return hab;
+    }
+
+    public void setHab(Habitacion hab) {
+        this.hab = hab;
+    }
+    
+            
     public boolean completo(){
         return (getDerecha()!=null && getIzquierda()!=null);
     }
@@ -72,14 +81,6 @@ public class NodoAVL {
 
     public boolean tieneDerecha(){
         return (getDerecha()!=null);
-    }
-
-    public Habitacion getHab() {
-        return hab;
-    }
-
-    public void setHab(Habitacion hab) {
-        this.hab = hab;
     }
       
 }

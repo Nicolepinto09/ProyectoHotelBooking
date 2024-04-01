@@ -11,34 +11,35 @@ import EDD.ListaSimple;
  * @author nicolepinto
  */
 public class Habitacion {
-    private int num_hab;
-    private String tipo_hab;
+    private int numeroHabitacion;
+    private String tipodeHabitacion;
     private int piso;
     private boolean dispo;
     private ListaSimple historial_hab;
-    
-    public Habitacion(int num_hab, String tipo_hab, int piso) {
-        this.num_hab = num_hab;
-        this.tipo_hab = tipo_hab;
+
+    public Habitacion(int numeroHabitacion, String tipodeHabitacion, int piso) {
+        this.numeroHabitacion = numeroHabitacion;
+        this.tipodeHabitacion = tipodeHabitacion;
         this.piso = piso;
-        this.dispo = false;
         this.historial_hab = new ListaSimple();
+        this.dispo = false;
     }
 
-    public int getNum_hab() {
-        return num_hab;
+    
+    public int getNumeroHabitacion() {
+        return numeroHabitacion;
     }
 
-    public void setNum_hab(int num_hab) {
-        this.num_hab = num_hab;
+    public void setNumeroHabitacion(int numeroHabitacion) {
+        this.numeroHabitacion = numeroHabitacion;
     }
 
-    public String getTipo_hab() {
-        return tipo_hab;
+    public String getTipodeHabitacion() {
+        return tipodeHabitacion;
     }
 
-    public void setTipo_hab(String tipo_hab) {
-        this.tipo_hab = tipo_hab;
+    public void setTipodeHabitacion(String tipodeHabitacion) {
+        this.tipodeHabitacion = tipodeHabitacion;
     }
 
     public int getPiso() {
@@ -48,7 +49,15 @@ public class Habitacion {
     public void setPiso(int piso) {
         this.piso = piso;
     }
+    
+    public ListaSimple getHistorial_hab() {
+        return historial_hab;
+    }
 
+    public void setHistorial_hab(ListaSimple historial_hab) {
+        this.historial_hab = historial_hab;
+    }
+    
     public boolean isDispo() {
         return dispo;
     }
@@ -57,15 +66,12 @@ public class Habitacion {
         this.dispo = dispo;
     }
 
-    public ListaSimple getHistorial_hab() {
-        return historial_hab;
+    @Override
+    public String toString() {
+        return "Habitacion:" + "numeroHabitacion:" + numeroHabitacion + ", tipodeHabitacion:" + tipodeHabitacion + ", piso:" + piso ;
     }
-
-    public void setHistorial_hab(ListaSimple historial_lab) {
-        this.historial_hab = historial_lab;
-    }
-
-        public String mostrar_historial(){
+    
+    public String mostrar_historial(){
         if(!historial_hab.isEmpty()){
             return historial_hab.Transformar();
         }
@@ -73,11 +79,4 @@ public class Habitacion {
         return "No hay historial en esta habitacion";
     }
 
-    
-    @Override
-    public String toString() {
-        return "Habitacion{" + "num_hab=" + num_hab + ", tipo_hab=" + tipo_hab + ", piso=" + piso + ", dispo=" + dispo + ", historial_lab=" + historial_hab + '}';
-    }
-
-    
 }

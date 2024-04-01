@@ -12,7 +12,7 @@ import Clases.Habitacion;
  */
 public class AVL {
     
-    private NodoAVL raiz;
+     private NodoAVL raiz;
 
     public AVL() {
         raiz = null;
@@ -141,5 +141,4 @@ public class AVL {
         }
         return null;
     }
-
 }

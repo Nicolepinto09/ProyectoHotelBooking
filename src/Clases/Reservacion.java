@@ -10,13 +10,13 @@ package Clases;
  */
 public class Reservacion {
     private Cliente cliente;
-    private String tipo_hab;
+    private String tipodeHabitacion;
     private String fechaLlegada;
     private String fechaSalida;
 
-    public Reservacion(Cliente cliente, String tipo_hab, String fechaLlegada, String fechaSalida) {
+    public Reservacion(Cliente cliente, String tipodeHabitacion, String fechaLlegada, String fechaSalida) {
         this.cliente = cliente;
-        this.tipo_hab = tipo_hab;
+        this.tipodeHabitacion = tipodeHabitacion;
         this.fechaLlegada = fechaLlegada;
         this.fechaSalida = fechaSalida;
     }
@@ -35,18 +35,12 @@ public class Reservacion {
         this.cliente = cliente;
     }
 
-    /**
-     * @return the tipohabitacion
-     */
-    public String getTipo_hab() {
-        return tipo_hab;
+    public String getTipodeHabitacion() {
+        return tipodeHabitacion;
     }
 
-    /**
-     * @param tipo_hab the tipohabitacion to set
-     */
-    public void setTipo_hab(String tipo_hab) {
-        this.tipo_hab = tipo_hab;
+    public void setTipodeHabitacion(String tipodeHabitacion) {
+        this.tipodeHabitacion = tipodeHabitacion;
     }
 
     /**
@@ -79,6 +73,6 @@ public class Reservacion {
 
     @Override
     public String toString() {
-        return "Cliente:" + cliente.getNombre() +" " + cliente.getApellido() + ", "+cliente.getCedula() + "\nTipo de Habitacion:" + tipo_hab + "\nFecha de Llegada:" + fechaLlegada + "\nFecha de Salida:" + fechaSalida;    }
+        return "Cliente:" + cliente.getNombre() +" " + cliente.getApellido() + ", "+cliente.getCedula() + "\nTipo de Habitacion:" + tipodeHabitacion + "\nFecha de Llegada:" + fechaLlegada + "\nFecha de Salida:" + fechaSalida;    }
     
 }
