@@ -39,7 +39,7 @@ public class Menu extends javax.swing.JFrame {
         In = new javax.swing.JButton();
         Out = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(Habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 200, -1));
 
         In.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        In.setText("Check-in");
+        In.setText("Check-In");
         In.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InActionPerformed(evt);
@@ -83,7 +83,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(In, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 200, -1));
 
         Out.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        Out.setText("Check-out");
+        Out.setText("Check-Out");
         Out.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OutActionPerformed(evt);
@@ -93,15 +93,14 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("HOTEL BOOKING");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 400, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FMenu.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(300, 300));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 490, 300));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/WhatsApp Image 2024-03-31 at 8.37.36 PM.jpeg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-400, -130, 1140, 540));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -142,7 +141,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutActionPerformed
         // TODO add your handling code here:
-         Checkout v3 = new Checkout(this);
+         CheckOut v3 = new CheckOut(this);
         this.setVisible(false);
         v3.setVisible(true);
         
@@ -189,8 +188,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton In;
     private javax.swing.JButton Out;
     private javax.swing.JButton Reservacion;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

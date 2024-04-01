@@ -48,14 +48,16 @@ public class Historial extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 204, 51));
-        jLabel1.setText("HISTORIAL DE LA HABITACIÓN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("HISTORIAL DE HABITACIÓN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Cambria", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ingrese la habitación que desea buscar:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
+        jLabel2.setText("- Ingrese el número de la habitación:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
+
+        input_numHab.setFont(new java.awt.Font("Cambria", 1, 15)); // NOI18N
         jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 100, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -65,7 +67,7 @@ public class Historial extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 80, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 80, -1));
 
         Menu.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Menu.setText("Menú");
@@ -74,12 +76,11 @@ public class Historial extends javax.swing.JFrame {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, 30));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 80, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FCheckIn.jpg"))); // NOI18N
-        jLabel3.setText("jLabel1");
-        jLabel3.setPreferredSize(new java.awt.Dimension(300, 300));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 490, 300));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/WhatsApp Image 2024-03-31 at 8.39.23 PM.jpeg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-510, -230, 1130, 560));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -98,11 +99,11 @@ public class Historial extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, habitaciones.buscarPorClave(num_hab).mostrar_historial());
             
             }else{
-                JOptionPane.showMessageDialog(null, "No se ha encontrado el numero de habitacion");
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el número de la habitación.");
             
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Numero de Habitacion invalido");
+            JOptionPane.showMessageDialog(null, "Número de habitación inválido.");
         }
     
     }//GEN-LAST:event_jButton2ActionPerformed

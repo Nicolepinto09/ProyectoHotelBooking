@@ -73,6 +73,6 @@ public class Reservacion {
 
     @Override
     public String toString() {
-        return "Cliente:" + cliente.getNombre() +" " + cliente.getApellido() + ", "+cliente.getCedula() + "\nTipo de Habitacion:" + tipodeHabitacion + "\nFecha de Llegada:" + fechaLlegada + "\nFecha de Salida:" + fechaSalida;    }
+        return "- Cliente: " + cliente.getNombre() + " " + cliente.getApellido() + ", C.I. " + cliente.getCedula() + "\n- Tipo de Habitación: " + tipodeHabitacion + "\n- Fecha de Llegada: " + fechaLlegada + "\n- Fecha de Salida: " + fechaSalida;    }
     
 }
