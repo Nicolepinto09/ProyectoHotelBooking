@@ -56,7 +56,7 @@ public class Historial extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese la habitación que desea buscar:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
-        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, -1));
+        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 100, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Buscar");

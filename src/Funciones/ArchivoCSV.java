@@ -47,13 +47,13 @@ public class ArchivoCSV {
                     String[] expresion_split = expresion_txt.split("\n");
                     for (int i = 0; i < expresion_split.length; i++) {
                         String[] info = expresion_split[i].split(",");
-                        if (help.ValidarCedula(info[0]) != -1 && help.Validar_TipoHab(info[5]) != null && help.ValidarCorreo(info[3]) != null && help.ValidarTelf(info[6]) != null) {
+                        if (help.ValidarCedula(info[0]) != -1 && help.Validar_TipoHab(info[5]) != null && help.ValidarCorreo(info[3]) != null && help.Validartelf(info[6]) != null) {
                             int cedula = help.ValidarCedula(info[0]);
                             String nombre = info[1];
                             String apellido = info[2];
                             String correo = help.ValidarCorreo(info[3]);
                             String genero = info[4];
-                            String telefono = help.ValidarTelf(info[6]);
+                            String telefono = help.Validartelf(info[6]);
 
                             Cliente cliente = new Cliente(nombre, apellido, correo, genero, cedula, telefono);
 
@@ -78,9 +78,8 @@ public class ArchivoCSV {
         }
 
     }
-        //funcion para leer archivo TXT
 
-        public void Leer_habitaciones(AVL habitaciones) {
+    public void Leer_habitaciones(AVL habitaciones) {
         String line;
         String expresion_txt = "";
         String path = "test//Habitaciones.csv";
@@ -121,10 +120,8 @@ public class ArchivoCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
     }
-        
-        //funcion para leer archivo TXT
 
-        public void Leer_Estado(HashTable table) {
+    public void Leer_Estado(HashTable table) {
         String line;
         String expresion_txt = "";
         String path = "test//Estado.csv";
@@ -148,14 +145,14 @@ public class ArchivoCSV {
                         String[] info = expresion_split[i].split(",");
 
                         if (!info[0].equalsIgnoreCase("")) {
-                            if (help.ValidarNumeros(info[0]) != -1 && help.ValidarCorreo(info[3]) != null && help.ValidarTelf(info[5]) != null) {
+                            if (help.ValidarNumeros(info[0]) != -1 && help.ValidarCorreo(info[3]) != null && help.Validartelf(info[5]) != null) {
                                 int num_hab = help.ValidarNumeros(info[0]);
 
                                 String nombre = info[1];
                                 String apellido = info[2];
                                 String email = help.ValidarCorreo(info[3]);
                                 String sexo = info[4];
-                                String telf = help.ValidarTelf(info[5]);
+                                String telf = help.Validartelf(info[5]);
                                 Cliente cliente = new Cliente(nombre, apellido, email, sexo, telf);
 
                                 ultimo_cliente.setApellido(apellido);
@@ -172,12 +169,12 @@ public class ArchivoCSV {
                             }
                         } else {
                             if (i != 0) {
-                                if (help.ValidarCorreo(info[3]) != null && help.ValidarTelf(info[5]) != null) {
+                                if (help.ValidarCorreo(info[3]) != null && help.Validartelf(info[5]) != null) {
                                     String nombre = info[1];
                                     String apellido = info[2];
                                     String email = help.ValidarCorreo(info[3]);
                                     String sexo = info[4];
-                                    String telf = help.ValidarTelf(info[5]);
+                                    String telf = help.Validartelf(info[5]);
                                     Cliente cliente = new Cliente(nombre, apellido, email, sexo, telf);
                                     
                                     table.AgregarAcompañante(ultimo_cliente, cliente);
@@ -193,9 +190,8 @@ public class ArchivoCSV {
             JOptionPane.showMessageDialog(null, "Error al leer la expresion");
         }
     }
-   
-    //funcion para leer archivo TXT
-        
+    
+        //funcion para leer archivo TXT
     public void Leer_historial(AVL habitaciones) {
         String line;
         String expresion_txt = "";
@@ -233,6 +229,8 @@ public class ArchivoCSV {
                             
                             habitaciones.buscarPorClave(num_hab).getHistorial_hab().insertarFinal(estado);
 
+                            
+
                         } else {
                             JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
                             break;
@@ -246,6 +244,5 @@ public class ArchivoCSV {
         }
 
     }
-        
-        
+
 }
