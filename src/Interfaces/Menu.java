@@ -33,27 +33,18 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Clientes = new javax.swing.JButton();
         Reservacion = new javax.swing.JButton();
         Habitacion = new javax.swing.JButton();
         In = new javax.swing.JButton();
         Out = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Clientes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Clientes.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        Clientes.setText("Búsqueda de Clientes");
-        Clientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClientesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, -1));
 
         Reservacion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Reservacion.setText("Búsqueda de Reservación");
@@ -98,6 +89,15 @@ public class Menu extends javax.swing.JFrame {
         jLabel2.setText("HOTEL BOOKING");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 400, -1));
 
+        Clientes.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        Clientes.setText("Búsqueda de Clientes");
+        Clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClientesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FMenu.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(300, 300));
@@ -107,14 +107,6 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
-        // TODO add your handling code here:
-      BClientes v5 = new BClientes (this);
-        this.setVisible(false);
-        v5.setVisible(true); 
-
-    }//GEN-LAST:event_ClientesActionPerformed
 
     private void ReservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservacionActionPerformed
         // TODO add your handling code here:
@@ -147,6 +139,13 @@ public class Menu extends javax.swing.JFrame {
         v3.setVisible(true);
         
     }//GEN-LAST:event_OutActionPerformed
+
+    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
+        // TODO add your handling code here:
+        BClientes v5 = new BClientes (this);
+        this.setVisible(false);
+        v5.setVisible(true); 
+    }//GEN-LAST:event_ClientesActionPerformed
 
     /**
      * @param args the command line arguments

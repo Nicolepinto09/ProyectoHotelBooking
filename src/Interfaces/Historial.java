@@ -40,46 +40,49 @@ public class Historial extends javax.swing.JFrame {
         input_numHab = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 204, 51));
-        jLabel1.setText("HISTORIAL DE LA HABITACIÓN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Cambria", 1, 28)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel1.setText("HISTORIAL DE HABITACIÓN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ingrese la habitación que desea buscar:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
-        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, -1));
+        jLabel2.setText("Ingrese el número de la habitación.");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, 20));
+
+        input_numHab.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 100, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Buscar");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 80, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 80, -1));
 
         Menu.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Menu.setText("Menú");
+        Menu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, 30));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 80, 20));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FCheckIn.jpg"))); // NOI18N
-        jLabel3.setText("jLabel1");
-        jLabel3.setPreferredSize(new java.awt.Dimension(300, 300));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 490, 300));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Imagenes/FHabitacion.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, -130, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -98,11 +101,11 @@ public class Historial extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, habitaciones.buscarPorClave(num_hab).mostrar_historial());
             
             }else{
-                JOptionPane.showMessageDialog(null, "No se ha encontrado el numero de habitacion");
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el número de habitación.");
             
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Numero de Habitacion invalido");
+            JOptionPane.showMessageDialog(null, "Némero de Habitacion inválido.");
         }
     
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -157,7 +160,7 @@ public class Historial extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
