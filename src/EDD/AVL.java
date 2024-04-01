@@ -12,7 +12,7 @@ import Clases.Habitacion;
  */
 public class AVL {
     
-    private NodoAVL raiz;
+     private NodoAVL raiz;
 
     public AVL() {
         raiz = null;
@@ -22,18 +22,11 @@ public class AVL {
         return raiz;
     }
 
+    // Método para insertar un nuevo nodo en el árbol
     public void insertar(int clave, Habitacion hab) {
         raiz = insertar(raiz, clave, hab);
     }
 
-    
-    private int altura(NodoAVL N) {
-        if (N == null)
-            return 0;
-        return N.getAltura();
-    }
-
-    
     private NodoAVL insertar(NodoAVL nodo, int clave, Habitacion hab) {
         if (nodo == null) {
             return new NodoAVL(clave, hab);
@@ -52,6 +45,12 @@ public class AVL {
 
         // Verificar el balanceo del árbol y aplicar rotaciones si es necesario
         return balancear(nodo, clave);
+    }
+
+    private int altura(NodoAVL N) {
+        if (N == null)
+            return 0;
+        return N.getAltura();
     }
 
     private NodoAVL balancear(NodoAVL nodo, int clave) {
@@ -142,5 +141,4 @@ public class AVL {
         }
         return null;
     }
-
 }

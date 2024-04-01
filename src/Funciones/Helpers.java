@@ -31,7 +31,7 @@ public class Helpers {
             return null;
         }
     }
-    
+      
     //Verifica si una cadena de texto contiene solo números y si tiene una longitud válida para representar un número de cédula
     public int ValidarCedula(String ci){
         String replaceAll = ci.replace(".", "");
@@ -48,7 +48,7 @@ public class Helpers {
     }
     
     //Verifica si una cadena de texto representa un número de teléfono válido
-    public String ValidarTelf(String telefono){
+    public String Validartelf(String telefono){
         String cell = telefono.replaceAll(" ", "");
         if (cell.charAt(0) == '(') {
             if (cell.charAt(4) == ')') {

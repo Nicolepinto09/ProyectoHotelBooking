@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class Checkout extends javax.swing.JFrame {
 
-               public static Menu v3;
+    public static Menu v3;
 
     public Checkout(Menu v3) {
         initComponents();
