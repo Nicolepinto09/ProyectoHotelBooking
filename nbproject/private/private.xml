@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/BClientes.java</file>
-=======
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/Bienvenida.java</file>
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/Checkout.java</file>
             <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/Menu.java</file>
->>>>>>> develop
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/CheckIn.java</file>
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/BClientes.java</file>
+            <file>file:/C:/Users/Isabel/Desktop/Miguel/UNIMET/Estructura%20de%20Datos/2324-2/Proyecto2/src/Interfaces/BReservacion.java</file>
         </group>
     </open-files>
 </project-private>
