@@ -63,7 +63,7 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         input_ci.setFont(new java.awt.Font("Cambria", 1, 15)); // NOI18N
-        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 130, -1));
+        jPanel1.add(input_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Check-In");

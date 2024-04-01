@@ -58,7 +58,7 @@ public class Historial extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
         input_numHab.setFont(new java.awt.Font("Cambria", 1, 15)); // NOI18N
-        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 100, -1));
+        jPanel1.add(input_numHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 100, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButton2.setText("Buscar");
@@ -67,7 +67,7 @@ public class Historial extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 80, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 80, -1));
 
         Menu.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Menu.setText("Menú");

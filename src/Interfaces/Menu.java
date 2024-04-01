@@ -141,7 +141,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutActionPerformed
         // TODO add your handling code here:
-         CheckOut v3 = new CheckOut(this);
+         Checkout v3 = new Checkout(this);
         this.setVisible(false);
         v3.setVisible(true);
         
